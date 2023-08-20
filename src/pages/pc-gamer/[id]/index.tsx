@@ -6,16 +6,14 @@ import { BsShare, BsCart4 } from 'react-icons/bs';
 import { ComputerImageList, ComputerDescription } from '@/components/pc-gamer';
 import { imageUrls } from '@/pages/api/data';
 
-interface UrlObjects {
+interface IImages {
 	url: string,
 	current?: Boolean
 }
 
 export default () => {
 
-	const [currentImage, setCurrentImage] = useState<UrlObjects>(() => {
-		return imageUrls[0]
-	})
+	const [currentImage, setCurrentImage] = useState<IImages>(() => imageUrls[0])
 
   return (
     <div>
@@ -63,27 +61,52 @@ export default () => {
 			<Section.Root>
 				<Section.Content>
 					<div className='h-[1000px] flex flex-col items-center'>
-						<h1 className='text-4xl font-extrabold'>Compre Junto</h1>
-						<div className='w-3/5'>
-							<PublicityCard.Root
-								id='14'
-								noHoverEffect
-								transparent
-							>
-								<PublicityCard.Image url='../assets/img/1 (1).png'/>
-								<PublicityCard.Content.Root>
-									<PublicityCard.Content.Product
-										name='Kit Gamer Evolut 4x1 Eg-54 Teclado Abnt2 Led Rainbow + Mouse Usb 1600dpi + Headset Conexão P2 +...'
-										noBold
-										size={1.2}
-										subtring={95}
-									/>
-									<PublicityCard.Content.Price price='98,89'/>
-									<IconButton icon={BsCart4} bold>
-										Comprar junto
-									</IconButton>
-								</PublicityCard.Content.Root>
-							</PublicityCard.Root>
+						<h1 className='text-[3rem] font-extrabold'>Compre Junto</h1>
+						<div className='flex items-center justify-between mt-5'>
+							<div className='flex-1'>
+								<PublicityCard.Root
+									id='14'
+									noHoverEffect
+									transparent
+								>
+									<PublicityCard.Image url='../assets/img/1(9).png'/>
+									<PublicityCard.Content.Root>
+										<div className='w-full h-full flex items-center justify-normal'>
+											<PublicityCard.Content.Product
+												name='Kit Gamer Evolut 4x1 Eg-54 Teclado Abnt2 Led Rainbow + Mouse Usb 1600dpi + Headset Conexão P2 +...'
+												noBold
+												size={1.2}
+												subtring={100}
+											/>
+										</div>
+									</PublicityCard.Content.Root>
+								</PublicityCard.Root>
+							</div>
+
+							<strong className='text-4xl font-extrabold'>+</strong>
+
+							<div className='flex-1'>
+								<PublicityCard.Root
+									id='14'
+									noHoverEffect
+									transparent
+								>
+									<PublicityCard.Image url='../assets/img/1 (1).png'/>
+									<PublicityCard.Content.Root>
+										<PublicityCard.Content.Product
+											name='Kit Gamer Evolut 4x1 Eg-54 Teclado Abnt2 Led Rainbow + Mouse Usb 1600dpi + Headset Conexão P2 +...'
+											noBold
+											size={1.2}
+											subtring={95}
+										/>
+										<PublicityCard.Content.Price price='98,89'/>
+										<br />
+										<IconButton icon={BsCart4} bold>
+											Comprar junto
+										</IconButton>
+									</PublicityCard.Content.Root>
+								</PublicityCard.Root>
+							</div>
 						</div>
 					</div>
 				</Section.Content>

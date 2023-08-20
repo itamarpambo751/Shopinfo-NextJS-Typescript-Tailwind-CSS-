@@ -2,9 +2,6 @@ import { Banner, Categories, Hr, Section, Settings } from '@/components/_ui';
 import React from 'react';
 import { categories } from '../api/data';
 
-export const metadata = {
-  title: 'PC Gamer'
-}
 export default () => {
   return (
     <div>
@@ -16,7 +13,7 @@ export default () => {
 							title='PC Gamer'
 							subtitle='A Nova era de PC Gamer chegou! Teste as suas Habilidades e jogue com um Neologic Gamer.'
 							paraghraph='No mercado dos games há mais de 20 anos, a Shopinfo busca o melhor em termos de hardware e tecnologia para computadores. Com compromisso e'
-							/>
+						/>
 					</Banner.Gradient.Container>
 				</div>
       </Banner.Gradient.Root>

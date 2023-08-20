@@ -39,7 +39,7 @@ const ComputerDescription: React.FC = () => {
 
 			<div className='mt-5 mb-3 flex justify-between items-center gap-14'>
 				<PublicityCard.Content.Price oldPrice='3.062,08' price='2.249,90' extra/>
-				<IconButton icon={BsCart4} uppercase bold>
+				<IconButton icon={BsCart4} uppercase bold className='px-14'>
 					Comprar
 				</IconButton>
 			</div>
