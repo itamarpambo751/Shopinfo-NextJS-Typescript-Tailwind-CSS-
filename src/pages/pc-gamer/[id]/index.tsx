@@ -5,13 +5,15 @@ import { CaretLeft, CaretRight, Heart, Truck } from 'phosphor-react';
 import { BsShare, BsCart4 } from 'react-icons/bs';
 import { ComputerImageList, ComputerDescription } from '@/components/pc-gamer';
 import { imageUrls } from '@/pages/api/data';
+import { Caret } from '@/components/_ui/Caret';
 
 interface IImages {
 	url: string,
 	current?: Boolean
 }
 
-export default () => {
+
+export default ():React.JSX.Element => {
 
 	const [currentImage, setCurrentImage] = useState<IImages>(() => imageUrls[0])
 
@@ -43,13 +45,9 @@ export default () => {
 											<PublicityLabel.Content bigText='' smallText='GRÁTIS'/>
 										</PublicityLabel.Root>
 									</div>
-									<button className='cursor-pointer p-5 rounded-full transition duration-200 hover:bg-[#1e1e1e81] absolute top-[40%] left-0 text-[red] text-2xl'>
-										<i className='cursor-pointer'><CaretLeft/></i>
-									</button>
+									<Caret.Left/>
 									<img src={currentImage.url} className='object-cover scale-[2.3] mt-[-130px] z-[-1]'/>
-									<button className='cursor-pointer p-5 rounded-full transition duration-200 hover:bg-[#1e1e1e81] absolute top-[40%] right-0 text-[red] text-2xl'>
-										<i className='cursor-pointer'><CaretRight/></i>
-									</button>
+									<Caret.Right />
 								</div>
 								<ComputerDescription />
 							</div>
@@ -60,7 +58,7 @@ export default () => {
 			<br /><br /><br />
 			<Section.Root>
 				<Section.Content>
-					<div className='h-[1000px] flex flex-col items-center'>
+					<div className='flex flex-col items-center'>
 						<h1 className='text-[3rem] font-extrabold'>Compre Junto</h1>
 						<div className='flex items-center justify-between mt-5'>
 							<div className='flex-1'>
@@ -109,7 +107,134 @@ export default () => {
 							</div>
 						</div>
 					</div>
+
+					<div className='flex flex-col justify-center items-center mt-24'>
+						<h1 className='text-2xl font-bold'>DESEMPENHO APROXIMADO</h1>
+
+						<ul className='flex gap-28 justify-between items-center mt-8 relative'>
+
+							{/* <Caret.Left /> */}
+
+							<li className='flex w-48 h-20'>
+								<img src="../assets/img/game(3).png"/>
+								<div className='px-2 flex flex-col justify-between'>
+									<strong>GTA V</strong>
+
+									<p className='flex flex-col'>
+										<span className='text-[.9rem] font-semibold text-[--whatsap-color]'>FULL HD:</span>
+										<span className='text-[.9rem] font-semibold'>75 FPS LOW</span>
+									</p>
+								</div>
+							</li>
+							<li className='flex w-48 h-20'>
+								<img src="../assets/img/game(1).jpg"/>
+								<div className='px-2 flex flex-col justify-between'>
+									<strong>CS:GO</strong>
+
+									<p className='flex flex-col'>
+										<span className='text-[.9rem] font-semibold text-[--whatsap-color]'>FULL HD:</span>
+										<span className='text-[.9rem] font-semibold'>95 FPS LOW</span>
+									</p>
+								</div>
+							</li>
+							<li className='flex w-48 h-20'>
+								<img src="../assets/img/game(8).png"/>
+								<div className='px-2 flex flex-col justify-between'>
+									<strong>VALORANT</strong>
+
+									<p className='flex flex-col'>
+										<span className='text-[.9rem] font-semibold text-[--whatsap-color]'>FULL HD:</span>
+										<span className='text-[.9rem] font-semibold'>150 FPS LOW</span>
+									</p>
+								</div>
+							</li>
+
+							{/* <Caret.Right /> */}
+						</ul>
+					</div>
 				</Section.Content>
+				<div className='mt-32 h-[1000px]'>
+					<Section.Content>
+						<h1 className='text-6xl font-bold'>Especificações</h1>
+
+						<div className='flex gap-7 mt-8'>
+							<div className='flex-1 h-full space-y-4'>
+								<div className='flex gap-4'>
+									<div className='border border-[var(--border-color-2)] rounded-md flex-1 flex flex-col justify-center items-center py-10'>
+										<img src="../assets/icons/4a.png" className='w-[50px] h-[50px] mb-3'/>
+										<span className='uppercase text-[.75rem] text-[var(--border-color)]'>Processador</span>
+										<p className='text-[.9rem] mt-1'>
+											Ryzen 5 5600G
+										</p>
+									</div>
+									<div className='border border-[var(--border-color-2)] rounded-md flex-1 flex flex-col justify-center items-center py-10'>
+										<img src="../assets/icons/5a.png" className='w-[50px] h-[50px] mb-3'/>
+										<span className='uppercase text-[.75rem] text-[var(--border-color)]'>Fonte</span>
+										<p className='text-[.9rem] mt-1'>
+											500W 80 Plus
+										</p>
+									</div>
+									<div className='border border-[var(--border-color-2)] rounded-md flex-1 flex flex-col justify-center items-center py-10'>
+										<img src="../assets/icons/2a.png" className='w-[50px] h-[50px] mb-3'/>
+										<span className='uppercase text-[.75rem] text-[var(--border-color)]'>Placa Mãe</span>
+										<p className='text-[.9rem] mt-1'>
+											A520M
+										</p>
+									</div>
+								</div>
+								<div className='flex gap-4'>
+									<div className='border border-[var(--border-color-2)] rounded-md flex-1 flex flex-col justify-center items-center py-10'>
+										<img src="../assets/icons/1a.png" className='w-[50px] h-[50px] mb-3'/>
+										<span className='uppercase text-[.75rem] text-[var(--border-color)]'>Processador</span>
+										<p className='text-[.9rem] mt-1'>
+											Ryzen 5 5600G
+										</p>
+									</div>
+									<div className='border border-[var(--border-color-2)] rounded-md flex-1 flex flex-col justify-center items-center py-10'>
+										<img src="../assets/icons/4a.png" className='w-[50px] h-[50px] mb-3'/>
+										<span className='uppercase text-[.75rem] text-[var(--border-color)]'>Fonte</span>
+										<p className='text-[.9rem] mt-1'>
+											500W 80 Plus
+										</p>
+									</div>
+									<div className='border border-[var(--border-color-2)] rounded-md flex-1 flex flex-col justify-center items-center py-10'>
+										<img src="../assets/icons/2a.png" className='w-[50px] h-[50px] mb-3'/>
+										<span className='uppercase text-[.75rem] text-[var(--border-color)]'>Placa Mãe</span>
+										<p className='text-[.9rem] mt-1'>
+											A520M
+										</p>
+									</div>
+								</div>
+								<div className='flex gap-4'>
+									<div className='border border-[var(--border-color-2)] rounded-md flex-1 flex flex-col justify-center items-center py-10'>
+										<img src="../assets/icons/4a.png" className='w-[50px] h-[50px] mb-3'/>
+										<span className='uppercase text-[.75rem] text-[var(--border-color)]'>Processador</span>
+										<p className='text-[.9rem] mt-1'>
+											Ryzen 5 5600G
+										</p>
+									</div>
+									<div className='border border-[var(--border-color-2)] rounded-md flex-1 flex flex-col justify-center items-center py-10'>
+										<img src="../assets/icons/5a.png" className='w-[50px] h-[50px] mb-3'/>
+										<span className='uppercase text-[.75rem] text-[var(--border-color)]'>Fonte</span>
+										<p className='text-[.9rem] mt-1'>
+											500W 80 Plus
+										</p>
+									</div>
+									<div className='border border-[var(--border-color-2)] rounded-md flex-1 flex flex-col justify-center items-center py-10'>
+										<img src="../assets/icons/2a.png" className='w-[50px] h-[50px] mb-3'/>
+										<span className='uppercase text-[.75rem] text-[var(--border-color)]'>Placa Mãe</span>
+										<p className='text-[.9rem] mt-1'>
+											A520M
+										</p>
+									</div>
+								</div>
+							</div>
+							<div className='w-[42%] h-full'>
+
+							</div>
+						</div>
+					</Section.Content>
+				</div>
 			</Section.Root>
     </div>
   )

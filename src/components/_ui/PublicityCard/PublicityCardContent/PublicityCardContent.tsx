@@ -10,12 +10,12 @@ const PublicityCardContentContainer: React.FC<PublicityCardContentProps> = ({
     children
 }:PublicityCardContentProps) => {
 
-  const { resize } = useContext(PublicityCardRootContext)
+  const PublicityCardContextProps = useContext(PublicityCardRootContext)
 
   return (
-    <PublicityCardContentContext.Provider value={{ resize }}>
-      <div className={`text-start w-full h-[100%] flex flex-col justify-between`}>
-          { children }
+    <PublicityCardContentContext.Provider value={PublicityCardContextProps}>
+      <div className="text-start w-full h-[100%] flex flex-col justify-between">
+          {children}
       </div>
     </PublicityCardContentContext.Provider>
   )

@@ -5,7 +5,7 @@ interface SmallContentProps {
 const SmallContent: React.FC<SmallContentProps> = ({ text }: SmallContentProps) => {
     return (
         <small className="select-small ml-4 font-extralight text-[.8rem]">
-            { text }
+            {text}
         </small>
     )
 }

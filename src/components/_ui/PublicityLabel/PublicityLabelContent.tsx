@@ -1,4 +1,5 @@
 import React from 'react';
+import { twMerge } from 'tailwind-merge'
 
 interface PublicityLabelContentProps {
     smallText?: string
@@ -16,12 +17,12 @@ const PublicityLabelContent: React.FC<PublicityLabelContentProps> = ({
         { smallText && (
             <p>{ smallText }</p>
         )}
-        <p 
-          id='expires_time' 
-          className={
-            `text-[${small ? '.87rem':'1rem'}] 
-            ${bold ? 'font-bold':extrabold ? 'font-extrabold':''}`
-          }>
+        <p
+          id='expires_time'
+					data-small={small}
+					data-bold={bold}
+					data-extrabold={extrabold}
+          className={twMerge("text-[1rem] data-[small=true]:text-[.87rem] data-[bold=true]:font-bold data-[extrabold=true]:font-extrabold")}>
             { bigText }
           </p>
     </span>

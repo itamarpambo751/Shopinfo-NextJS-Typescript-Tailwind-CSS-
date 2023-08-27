@@ -12,29 +12,31 @@ const PublicityCardStars: React.FC<PublicityCardStarsProps> = ({
     value, left
 }: PublicityCardStarsProps) => {
 
-  const { resize } = useContext(PublicityCardContentContext)
-    
+  const PublicityCardContextProps = useContext(PublicityCardContentContext)
+
   return (
-    <div className={`flex justify-${resize ? (left ? `start scale-[.8] ml-[-25px]`:`center scale-[.8]`):'start'}  items-center gap-[.5rem] w-full`}>
-        {resize && <hr className='border-t border-[1px]-white' />}
+    <div data-resize={PublicityCardContextProps.resize} data-left={!left} className="flex data-[resize=true]:data-[left=true]:justify-center data-[resize=true]:data-[left=true]:scale-[.8] items-center gap-[.5rem] w-full">
+
+        {PublicityCardContextProps.resize && <hr className='border-t border-[1px]-white' />}
+
         <label className="flex justify-start items-center gap-[.2rem]">
-            <i className='text-[var(--star-color)]'>
+            <i className="text-[var(--star-color)]">
                 <BsStarFill/>
             </i>
-            <i className='text-[var(--star-color)]'>
+            <i className="text-[var(--star-color)]">
                 <BsStarFill/>
             </i>
-            <i className='text-[var(--star-color)]'>
+            <i className="text-[var(--star-color)]">
                 <BsStarFill/>
             </i>
-            <i className='text-[var(--star-color)]'>
+            <i className="text-[var(--star-color)]">
                 <BsStarFill/>
             </i>
-            <i className='text-[var(--star-color)]'>
+            <i className="text-[var(--star-color)]">
                 <BsStarFill/>
             </i>
         </label>
-        <small className='text-[#ffc038]'>({ value })</small>
+        <small className="text-[#ffc038]">{value}</small>
     </div>
   )
 }

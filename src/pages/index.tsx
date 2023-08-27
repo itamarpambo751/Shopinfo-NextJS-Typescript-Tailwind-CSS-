@@ -1,14 +1,12 @@
+import React from "react";
+
 import { Shopinfo } from "@/components";
 import { Banner, Categories, InterTripleNavigation, PublicityCard, PublicityLabel, Section, Settings } from "@/components/_ui";
 import { ArrowRight } from "phosphor-react";
 import { BsFire } from "react-icons/bs";
 import { categories } from "./api/data"
 
-
-export const metadata = {
-  title: 'Shopinfo'
-}
-export default () => {
+export default ():React.JSX.Element => {
   return (
     <div>
       <Banner.Image url="./assets/img/bcg5.jpg"/>
@@ -247,13 +245,13 @@ export default () => {
             <Section.Content>
               <ul className="flex justify-between px-7">
                 <li className="h-[461px] w-[336]">
-                  <img src="./assets/img/nubank.webp" className="efect-hover object-cover w-full h-full"/>
+                  <img src="./assets/img/nubank.webp" className="effect-hover object-cover w-full h-full"/>
                 </li>
                 <li className="h-[461px] w-[336]">
-                  <img src="./assets/img/nubank.webp" className="efect-hover object-cover w-full h-full"/>
+                  <img src="./assets/img/nubank.webp" className="effect-hover object-cover w-full h-full"/>
                 </li>
                 <li className="h-[461px] w-[336]">
-                  <img src="./assets/img/nubank.webp" className="efect-hover object-cover w-full h-full"/>
+                  <img src="./assets/img/nubank.webp" className="effect-hover object-cover w-full h-full"/>
                 </li>
               </ul>
             </Section.Content>

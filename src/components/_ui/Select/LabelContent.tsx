@@ -11,7 +11,7 @@ const LabelContent: React.FC<LabelContentProps> = ({ icon, text }: LabelContentP
             {icon && (
                 <img src={icon} className="w-6"/>
             )}
-            <span className="text-[1.1rem] font-bold">{ text }</span>
+            <span className="text-[1.1rem] font-bold">{text}</span>
         </label>
     )
 }

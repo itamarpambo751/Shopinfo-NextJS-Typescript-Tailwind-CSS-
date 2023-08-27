@@ -5,8 +5,9 @@ interface SelectContentProps {
 }
 
 const SelectContent: React.FC<SelectContentProps> = ({ options }: SelectContentProps) => {
+
   return (
-    <select id="video">
+    <select>
       {
         options.map((option, i) => {
           return (

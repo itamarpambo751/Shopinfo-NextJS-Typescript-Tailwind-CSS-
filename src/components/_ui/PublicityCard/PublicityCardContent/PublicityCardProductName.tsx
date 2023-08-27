@@ -12,10 +12,13 @@ const PublicityCardProductName: React.FC<PublicityCardProductNameProps> = ({
     name, subtring, noBold, size
 }: PublicityCardProductNameProps) => {
 
-  const { resize } = useContext(PublicityCardContentContext)
+  const PublicityCardContextProps = useContext(PublicityCardContentContext)
 
   return (
-    <h1 className={`${!noBold && 'font-bold'} ${size ? 'text-['+size+'rem]':'text-[1rem]'} ${resize && 'mt-[-45px]'}`}>
+    <h1
+			data-resize={PublicityCardContextProps.resize}
+			data-bold={!noBold}
+			className={`data-[bold=true]:font-bold data-[resize=true]:mt-[-45px] ${size ? 'text-['+size+'rem]':'text-[1rem]'}`}>
         { name.substring(0, subtring ? subtring:54) }...
     </h1>
   )

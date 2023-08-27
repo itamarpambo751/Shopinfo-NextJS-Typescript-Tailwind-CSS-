@@ -10,6 +10,7 @@
   --red-color: #FE093C;
   --red-text-color: #d62929;
   --border-color: #555;
+	--border-color-2: #2e2e2ed3;
   --border-size: 1px;
   --background-color: #111111;
   --whatsap-color: #25d366;
@@ -40,13 +41,13 @@
   input:focus {
     @apply border-[#c71420] shadow-[0px_0px_1px_1px_#FE093C];
   }
-  .efect-hover  {
+  .effect-hover  {
     cursor: pointer;
     position: relative;
     transition: .3s ease-in-out;
     border: 2.2px solid #f9232a00;
   }
-  .efect-hover:hover {
+  .effect-hover:hover {
     box-shadow: 0 0 10px 4px #c81d2288;
     border: 2.2px solid #d62929;
   }

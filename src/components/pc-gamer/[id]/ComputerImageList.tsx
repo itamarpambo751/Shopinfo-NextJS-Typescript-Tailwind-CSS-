@@ -1,20 +1,20 @@
 import React from 'react';
 
-interface UrlObjects {
+interface ImageType {
 	url: string
 	current?: Boolean
 }
 
 interface ComputerImageListProps {
-	urlList: UrlObjects[]
-	dispatch: React.Dispatch<React.SetStateAction<UrlObjects>>
+	urlList: ImageType[]
+	dispatch: React.Dispatch<React.SetStateAction<ImageType>>
 }
 
 const ComputerImageList: React.FC<ComputerImageListProps> = ({
 	urlList, dispatch
 }: ComputerImageListProps) => {
 
-	const handleClick = (url: UrlObjects) => {
+	const handleClick = React.useCallback((url: ImageType) => {
 		dispatch(() => {
 			urlList.forEach(obj => {
 				if (obj.url === url.url) obj.current = true
@@ -22,7 +22,7 @@ const ComputerImageList: React.FC<ComputerImageListProps> = ({
 			})
 			return url
 		})
-	}
+	},[])
 
 	return (
 		<ul className='space-y-2'>

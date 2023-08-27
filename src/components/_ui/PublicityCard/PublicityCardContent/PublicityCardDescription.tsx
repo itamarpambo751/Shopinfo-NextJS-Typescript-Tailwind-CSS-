@@ -2,12 +2,12 @@ import React, { useContext } from 'react';
 import PublicityCardProductPrice from './PublicityCardProductPrice';
 import PublicityCardContentContext from './PublicityCardContentContext';
 import PublicityCard from '..';
+import { twMerge } from 'tailwind-merge'
 
 interface Setting {
     imgUrl: string
     setting: string
-} 
-
+}
 interface PublicityCardDescriptionProps {
     title: string
     price: string
@@ -19,30 +19,39 @@ const PublicityCardDescription: React.FC<PublicityCardDescriptionProps> = ({
     title, settings, price, oldPrice
 }: PublicityCardDescriptionProps) => {
 
-  const { resize } = useContext(PublicityCardContentContext)  
+  const PublicityCardContextProps = useContext(PublicityCardContentContext)
 
   return (
     <div>
-        {resize && <PublicityCardProductPrice price={price} oldPrice={oldPrice} resize/>}
-        
-        {resize && <PublicityCard.Content.Stars value={246}/>}
-        
-        <span className={`${resize && 'text-[.77rem]' }`}>{ title }</span>
+        {PublicityCardContextProps.resize && <PublicityCardProductPrice price={price} oldPrice={oldPrice} resize/>}
+
+        {PublicityCardContextProps.resize && <PublicityCard.Content.Stars value={246}/>}
+
+        <span data-resize={PublicityCardContextProps.resize} className="data-[resize=true]:text-[.77rem]"> {title} </span>
 
         {settings?.length && (
             <ul className="flex items-center justify-start gap-x-3 flex-wrap mt-1 pr-5 mb-1">
-                {settings.map(({ imgUrl, setting }) => {
+                {settings.map(({ imgUrl: url, setting }) => {
                     return (
                         <li key={setting} className="flex justify-start items-center gap-1">
-                            <img src={ imgUrl } className={`${resize ? 'w-[13px]':'w-[15px]'}`}/>
-                            <span className={`${resize ? 'text-[.77rem]':'text-[.9rem]'}`}>{ setting }</span>
+                            <img
+															src={url}
+															data-resize={PublicityCardContextProps.resize}
+															className={twMerge("w-[15px] data-[resize=true]:w-[13px]")}
+														/>
+                            <span
+															data-resize={PublicityCardContextProps.resize}
+															className={twMerge("text-[.9rem] data-[resize=true]:text-[.77rem]")}
+														>
+															{setting}
+														</span>
                         </li>
                     )
                 })}
             </ul>
         )}
 
-        {!resize && <PublicityCardProductPrice price={price} oldPrice={oldPrice}/>}
+        {!PublicityCardContextProps.resize && <PublicityCardProductPrice price={price} oldPrice={oldPrice}/>}
     </div>
   )
 }

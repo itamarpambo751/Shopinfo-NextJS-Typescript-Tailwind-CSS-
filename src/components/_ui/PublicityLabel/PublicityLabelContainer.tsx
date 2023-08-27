@@ -12,10 +12,12 @@ React.FC<PublicityLabelContainerProps> = ({ children, expires, free }: Publicity
   return (
     <button className='block mb-2'>
       <label
+				data-expires={expires}
+				data-free={free}
         htmlFor="expires_time"
-        className={`w-auto flex justify-start items-center gap-2 px-2 py-1 rounded-[.4rem]
-        bg-[var(--green-color)] ${expires ? 'bg-[var(--red-text-color)]':''}
-        ${free ? 'bg-[var(--orange-color)]':''}`}
+        className="w-auto flex justify-start items-center gap-2 px-2 py-1 rounded-[.4rem]
+        bg-[var(--green-color)] data-[expires=true]:bg-[var(--red-text-color)]
+        data-[free=true]:bg-[var(--orange-color)]"
       >
         { children }
       </label>

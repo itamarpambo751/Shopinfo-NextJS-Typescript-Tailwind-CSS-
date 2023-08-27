@@ -1,8 +1,11 @@
 import { createContext } from "react";
 
 interface PublicityCardContentContextProps {
-    resize: Boolean
+  resize: Boolean
 }
-const PublicityCardContentContext = createContext<PublicityCardContentContextProps>({ resize: false })
+const PublicityCardContentContextPropsValues = {
+	resize: false
+}
+const PublicityCardContentContext = createContext<PublicityCardContentContextProps>(PublicityCardContentContextPropsValues)
 
 export default PublicityCardContentContext

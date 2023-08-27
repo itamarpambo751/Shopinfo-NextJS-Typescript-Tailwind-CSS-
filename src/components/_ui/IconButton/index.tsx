@@ -11,10 +11,13 @@ const IconButton: React.FC<IconButtonProps> = ({
 	icon: Icon, children, uppercase, bold, className
 }: IconButtonProps) => {
 	return (
-		<button className={`
+		<button
+			data-uppercase={uppercase}
+			data-bold={bold}
+			className={`
 			flex justify-center items-center gap-3 bg-[var(--red-text-color)]
-			${className} py-3 rounded-md ${uppercase && 'uppercase'} ${bold && 'font-bold'} text-xl`}
-			>
+			${className} py-3 rounded-md data-[uppercase=true]:uppercase data-[bold=true]:font-bold text-xl`}
+		>
 			{Icon && <i className='text-2xl'> <Icon /> </i>}
 			{ children }
     </button>
