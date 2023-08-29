@@ -1,7 +1,5 @@
-import ComputerImageList from "./[id]/ComputerImageList";
-import CEPForm from "./[id]/CEPForm";
-import ComputerDescription from "./[id]/ComputerDescription";
+import RootingComputer from "./[id]/RootingComputer";
 
 export {
-	ComputerImageList, CEPForm, ComputerDescription
+	RootingComputer
 }

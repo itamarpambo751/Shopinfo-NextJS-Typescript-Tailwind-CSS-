@@ -1,6 +1,6 @@
 import React from 'react'
-import { List, MagnifyingGlass, Truck } from 'phosphor-react'
-import { BsCart2 } from 'react-icons/bs'
+import { Heart, List, MagnifyingGlass, Truck } from 'phosphor-react'
+import { BsCart2, BsHeart } from 'react-icons/bs'
 import { CiUser } from 'react-icons/ci'
 import { Section } from '..'
 import Link from 'next/link'
@@ -17,7 +17,7 @@ const Header:React.FC = () => {
             <Link href='/'>
               <img src="./assets/img/logo1.png" alt="logo" className='pb-1'/>
             </Link>
-            <div className="flex-1 flex justify-center items-center gap-5">
+            <div className="flex-1 flex justify-center items-center gap-3">
               <div className="flex items-center gap-6 relative">
                 <ul className="flex justify-center items-end pt-1 gap-3 relative">
                   <li className="header-list-link">
@@ -36,10 +36,10 @@ const Header:React.FC = () => {
                     <Link href="/hardware">Hardware</Link>
                   </li>
                 </ul>
-                <div className='flex justify-normal items-center gap-3'>
-                  <input 
-                    type="text" 
-                    placeholder="O que você procura..." 
+                <div className='flex justify-normal items-center gap-2'>
+                  <input
+                    type="text"
+                    placeholder="O que você procura..."
                     className="w-[185px]"
                   />
                     <button className='p-[.4rem]'>
@@ -49,8 +49,8 @@ const Header:React.FC = () => {
                     </button>
                 </div>
               </div>
-              <ul className="flex gap-2  pl-4 border-l-2 border-[var(--border-color)]">
-                <li className='flex justify-center items-end gap-2'>
+              <ul className="flex gap-2  pl-3 border-l-2 border-[var(--border-color)]">
+                <li className='flex justify-center items-end gap-1'>
                   <i className='text-[1.6rem] text-[var(--red-color)]'>
                     <Truck/>
                   </i>
@@ -58,7 +58,7 @@ const Header:React.FC = () => {
                     Rastreio
                   </span>
                 </li>
-                <li className='flex justify-center items-end gap-2'>
+                <li className='flex justify-center items-end gap-1'>
                   <i className='text-[1.6rem] text-[var(--red-color)]'>
                     <CiUser/>
                   </i>
@@ -66,7 +66,7 @@ const Header:React.FC = () => {
                     Minha conta
                   </span>
                 </li>
-                <li className='flex justify-center items-end gap-2'>
+                <li className='flex justify-center items-end gap-1'>
                   <i className='text-[1.6rem] text-[var(--red-color)]'>
                     <BsCart2/>
                   </i>
@@ -74,27 +74,12 @@ const Header:React.FC = () => {
                     Carrinho
                   </span>
                 </li>
+								<li className='flex justify-center items-end'>
+									<i className='text-[1.5rem] text-[var(--red-color)]'>
+                    <Heart/>
+                  </i>
+								</li>
               </ul>
-            </div>
-          </section>
-          <section className='hidden justify-between items-center w-[100%]'>
-            <button>
-              <i className='text-white text-[2rem]'>
-                <List/>
-              </i>
-            </button>
-            <img src="./assets/img/logo1.png" alt="" />
-            <div className='flex justify-center items-center gap-5'>
-              <button>
-                <i className='text-[#FFF] text-[1.6rem] font-extrabold'>
-                  <MagnifyingGlass />
-                </i>
-              </button>
-              <button>
-                <i className='text-[var(--red-color)] text-[2rem] font-extrabold'>
-                  <BsCart2/>
-                </i>
-              </button>
             </div>
           </section>
         </div>

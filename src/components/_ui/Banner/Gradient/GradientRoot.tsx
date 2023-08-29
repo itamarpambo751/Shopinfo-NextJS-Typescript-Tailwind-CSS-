@@ -11,7 +11,7 @@ const GradientRoot: React.FC<GradientRootProps> = ({
 }: GradientRootProps) => {
   return (
     <div className='w-full relative'>
-        { children }
+        {children}
     </div>
   )
 }

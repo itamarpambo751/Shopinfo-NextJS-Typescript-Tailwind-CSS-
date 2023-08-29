@@ -51,3 +51,50 @@ export const imageUrls =  [
 		url: '../assets/img/1(2).png'
 	}
 ]
+
+export const computerSettings = [
+	{
+		settingName: 'Processador',
+		settingDescription: 'Ryzen 5 5600G'
+	},
+	{
+		settingName: 'Fonte',
+		settingDescription: '500W 80 Plus'
+	},
+	{
+		settingName: 'Placa Mãe',
+		settingDescription: 'A520M'
+	},
+	{
+		settingName: 'Sistema Operacional',
+		settingDescription: 'Windows 11 - 30 dias grátis'
+	},
+	{
+		settingName: 'Fan adicional',
+		settingDescription: '3X Frontal'
+	},
+	{
+		settingName: 'Placa de vídeo',
+		settingDescription: 'Radeon Vega 7 Integrado'
+	},
+	{
+		settingName: 'Memória',
+		settingDescription: '16GB'
+	},
+	{
+		settingName: 'Garantia',
+		settingDescription: '1 Ano'
+	},
+	{
+		settingName: 'SSD',
+		settingDescription: '240Gb'
+	},
+	{
+		settingName: 'Cabos Inclusos',
+		settingDescription: 'Energia'
+	},
+	{
+		settingName: 'Gabinete',
+		settingDescription: 'Gabinete Gamer Neologic NL150'
+	}
+]

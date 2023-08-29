@@ -1,60 +1,14 @@
-import React, { useState } from 'react';
+import React, { useId } from 'react';
 
-import { Banner, IconButton, PublicityCard, PublicityLabel, Section } from '@/components/_ui';
-import { CaretLeft, CaretRight, Heart, Truck } from 'phosphor-react';
-import { BsShare, BsCart4 } from 'react-icons/bs';
-import { ComputerImageList, ComputerDescription } from '@/components/pc-gamer';
-import { imageUrls } from '@/pages/api/data';
-import { Caret } from '@/components/_ui/Caret';
-
-interface IImages {
-	url: string,
-	current?: Boolean
-}
-
+import { IconButton, PublicityCard, Section } from '@/components/_ui';
+import { BsCart4 } from 'react-icons/bs';
+import { computerSettings } from '@/pages/api/data';
+import { RootingComputer } from '@/components/pc-gamer';
 
 export default ():React.JSX.Element => {
-
-	const [currentImage, setCurrentImage] = useState<IImages>(() => imageUrls[0])
-
   return (
     <div>
-      <Banner.Gradient.Root>
-        <Banner.Gradient.Container section='Home > Computadores Gamer > Exclusivos neologic'>
-          <div className='flex flex-1 gap-16 w-full'>
-						<ComputerImageList urlList={imageUrls} dispatch={setCurrentImage}/>
-						<div className='w-full'>
-							<div className='flex items-center justify-start gap-6 w-[300px]'>
-								<span className='text-[.8rem]'>
-									<PublicityCard.Content.Stars value={234}/>
-								</span>
-								| <span className='uppercase text-green-500 text-sm'>Neologic</span> |
-								<span className='flex justify-start items-center gap-5'>
-									<i className='text-[1.8rem]'><BsShare /></i>
-									<i className='text-[1.8rem]'><Heart /></i>
-								</span>
-							</div>
-							<div className='grid-reverse-cols w-full h-full'>
-								<div className='relative w-full h-full flex flex-col justify-center items-center'>
-									<div className='absolute top-2 left-0 flex justify-start items-center gap-3'>
-										<PublicityLabel.Root>
-											<PublicityLabel.Content bigText='-27%' bold/>
-										</PublicityLabel.Root>
-										<PublicityLabel.Root free>
-											<PublicityLabel.Icon icon={Truck}/>
-											<PublicityLabel.Content bigText='' smallText='GRÁTIS'/>
-										</PublicityLabel.Root>
-									</div>
-									<Caret.Left/>
-									<img src={currentImage.url} className='object-cover scale-[2.3] mt-[-130px] z-[-1]'/>
-									<Caret.Right />
-								</div>
-								<ComputerDescription />
-							</div>
-						</div>
-					</div>
-        </Banner.Gradient.Container>
-      </Banner.Gradient.Root>
+			<RootingComputer />
 			<br /><br /><br />
 			<Section.Root>
 				<Section.Content>
@@ -157,80 +111,35 @@ export default ():React.JSX.Element => {
 					<Section.Content>
 						<h1 className='text-6xl font-bold'>Especificações</h1>
 
-						<div className='flex gap-7 mt-8'>
-							<div className='flex-1 h-full space-y-4'>
-								<div className='flex gap-4'>
-									<div className='border border-[var(--border-color-2)] rounded-md flex-1 flex flex-col justify-center items-center py-10'>
-										<img src="../assets/icons/4a.png" className='w-[50px] h-[50px] mb-3'/>
-										<span className='uppercase text-[.75rem] text-[var(--border-color)]'>Processador</span>
-										<p className='text-[.9rem] mt-1'>
-											Ryzen 5 5600G
-										</p>
-									</div>
-									<div className='border border-[var(--border-color-2)] rounded-md flex-1 flex flex-col justify-center items-center py-10'>
-										<img src="../assets/icons/5a.png" className='w-[50px] h-[50px] mb-3'/>
-										<span className='uppercase text-[.75rem] text-[var(--border-color)]'>Fonte</span>
-										<p className='text-[.9rem] mt-1'>
-											500W 80 Plus
-										</p>
-									</div>
-									<div className='border border-[var(--border-color-2)] rounded-md flex-1 flex flex-col justify-center items-center py-10'>
-										<img src="../assets/icons/2a.png" className='w-[50px] h-[50px] mb-3'/>
-										<span className='uppercase text-[.75rem] text-[var(--border-color)]'>Placa Mãe</span>
-										<p className='text-[.9rem] mt-1'>
-											A520M
-										</p>
-									</div>
-								</div>
-								<div className='flex gap-4'>
-									<div className='border border-[var(--border-color-2)] rounded-md flex-1 flex flex-col justify-center items-center py-10'>
-										<img src="../assets/icons/1a.png" className='w-[50px] h-[50px] mb-3'/>
-										<span className='uppercase text-[.75rem] text-[var(--border-color)]'>Processador</span>
-										<p className='text-[.9rem] mt-1'>
-											Ryzen 5 5600G
-										</p>
-									</div>
-									<div className='border border-[var(--border-color-2)] rounded-md flex-1 flex flex-col justify-center items-center py-10'>
-										<img src="../assets/icons/4a.png" className='w-[50px] h-[50px] mb-3'/>
-										<span className='uppercase text-[.75rem] text-[var(--border-color)]'>Fonte</span>
-										<p className='text-[.9rem] mt-1'>
-											500W 80 Plus
-										</p>
-									</div>
-									<div className='border border-[var(--border-color-2)] rounded-md flex-1 flex flex-col justify-center items-center py-10'>
-										<img src="../assets/icons/2a.png" className='w-[50px] h-[50px] mb-3'/>
-										<span className='uppercase text-[.75rem] text-[var(--border-color)]'>Placa Mãe</span>
-										<p className='text-[.9rem] mt-1'>
-											A520M
-										</p>
-									</div>
-								</div>
-								<div className='flex gap-4'>
-									<div className='border border-[var(--border-color-2)] rounded-md flex-1 flex flex-col justify-center items-center py-10'>
-										<img src="../assets/icons/4a.png" className='w-[50px] h-[50px] mb-3'/>
-										<span className='uppercase text-[.75rem] text-[var(--border-color)]'>Processador</span>
-										<p className='text-[.9rem] mt-1'>
-											Ryzen 5 5600G
-										</p>
-									</div>
-									<div className='border border-[var(--border-color-2)] rounded-md flex-1 flex flex-col justify-center items-center py-10'>
-										<img src="../assets/icons/5a.png" className='w-[50px] h-[50px] mb-3'/>
-										<span className='uppercase text-[.75rem] text-[var(--border-color)]'>Fonte</span>
-										<p className='text-[.9rem] mt-1'>
-											500W 80 Plus
-										</p>
-									</div>
-									<div className='border border-[var(--border-color-2)] rounded-md flex-1 flex flex-col justify-center items-center py-10'>
-										<img src="../assets/icons/2a.png" className='w-[50px] h-[50px] mb-3'/>
-										<span className='uppercase text-[.75rem] text-[var(--border-color)]'>Placa Mãe</span>
-										<p className='text-[.9rem] mt-1'>
-											A520M
-										</p>
-									</div>
-								</div>
+						<div className='flex gap-4 mt-8'>
+							<div className='flex-1 flex flex-wrap gap-4'>
+									{computerSettings.slice(0, 9).map((setting) => (
+										<div key={useId()} className='border w-[221px] h-[180px] border-[var(--border-color-2)] rounded-md flex flex-col justify-center items-center py-10'>
+											<img src="../assets/icons/4a.png" className='w-[50px] h-[50px] mb-3'/>
+											<span className='uppercase text-[.75rem] text-[var(--border-color)]'>{setting.settingName}</span>
+											<p className='text-[.9rem] mt-1'>
+												{setting.settingDescription}
+											</p>
+										</div>
+									))}
 							</div>
-							<div className='w-[42%] h-full'>
 
+							<div className='w-[42%] h-full'>
+								<ul className='w-full text-center'>
+									{computerSettings.map((setting, index) => (
+										<li
+											key={useId()}
+											data-mod={index % 2 === 1}
+											className='px-5 py-[.5rem] w-full data-[mod=true]:bg-[#1a1a1a]'
+											style={{display: 'grid', gridTemplateColumns: '35% auto'}}
+										>
+											<span className='text-[var(--border-color)] text-left'>{setting.settingName}</span>
+											<span className='text-left'>{setting.settingDescription}</span>
+										</li>
+									))}
+									<br />
+									<span className='text-[var(--red-color)] text-[1.2rem] underline cursor-pointer hover:text-[var(--red-text-color)]'>Quero saber mais</span>
+								</ul>
 							</div>
 						</div>
 					</Section.Content>

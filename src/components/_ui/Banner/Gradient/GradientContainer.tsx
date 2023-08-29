@@ -15,9 +15,9 @@ const GradientContainer: React.FC<GradientContainerProps> = ({
       <Section.Root>
         <div className='mt-[-45px]'>
           <Section.Content>
-            <small className='text-[var(--border-color)]'>{ section }</small>
+            <small className='text-[var(--border-color)]'>{section}</small>
             <div className='mt-16'>
-                { children }
+                {children}
             </div>
             </Section.Content>
         </div>
