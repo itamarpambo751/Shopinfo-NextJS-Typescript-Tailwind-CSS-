@@ -2,7 +2,7 @@ import { Banner, Categories, Hr, Section, Settings } from '@/components/_ui';
 import React from 'react';
 import { categories } from '../api/data';
 
-export default ():React.JSX.Element => {
+export default function page()  {
   return (
     <div>
       <Banner.Gradient.Root>

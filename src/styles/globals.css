@@ -5,7 +5,7 @@
 
 
 :root {
-  --star-color: #f2d252;
+  --star-color: #f4c31f;
   --orange-color: #c44604;
   --red-color: #FE093C;
   --red-text-color: #d62929;
@@ -51,8 +51,29 @@
     box-shadow: 0 0 10px 4px #c81d2288;
     border: 2.2px solid #d62929;
   }
+	.just-p {
+		font-size: .9rem;
+	}
+	.p {
+		font-size: .9rem;
+		color: var(--border-color);
+	}
 }
 
+
+.link-border-red::before {
+	content: '';
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	height: 2px;
+	width: 0%;
+	background: var(--red-color);
+	transition: .3s ease-in-out;
+}
+.link-border-red:hover::before {
+	width: 100%;
+}
 .before_line::before {
   content: '';
   position: absolute;
@@ -98,4 +119,27 @@
   display: grid;
   grid-template-columns: 40% 60%;
 	gap: 4rem;
+}
+.global-apply-after-before {
+	position: relative;
+}
+.global-apply-after-before::after{
+	content: '';
+	position: absolute;
+	height: 10px;
+	width: 90%;
+	right: 5%;
+	top: -10px;
+	background: var(--red-text-color);
+	border-radius: 15px 15px 0 0;
+}
+.global-apply-after-before::before{
+	content: '';
+	position: absolute;
+	height: 10px;
+	width: 90%;
+	right: 5%;
+	bottom: -10px;
+	background: var(--red-text-color);
+	border-radius: 0 0 15px 15px;
 }

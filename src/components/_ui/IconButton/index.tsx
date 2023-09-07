@@ -16,7 +16,7 @@ const IconButton: React.FC<IconButtonProps> = ({
 			data-bold={bold}
 			className={`
 			flex justify-center items-center gap-3 bg-[var(--red-text-color)]
-			${className} py-3 rounded-md data-[uppercase=true]:uppercase data-[bold=true]:font-bold text-xl`}
+			py-3 rounded-md data-[uppercase=true]:uppercase data-[bold=true]:font-bold ${className} `}
 		>
 			{Icon && <i className='text-2xl'> <Icon /> </i>}
 			{ children }

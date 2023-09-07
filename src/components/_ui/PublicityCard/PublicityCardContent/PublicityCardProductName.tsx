@@ -6,10 +6,11 @@ interface PublicityCardProductNameProps {
     subtring?: number
 		noBold?: Boolean
 		size?: number
+		className?: string
 }
 
 const PublicityCardProductName: React.FC<PublicityCardProductNameProps> = ({
-    name, subtring, noBold, size
+    name, subtring, noBold, size, className
 }: PublicityCardProductNameProps) => {
 
   const PublicityCardContextProps = useContext(PublicityCardContentContext)
@@ -18,7 +19,7 @@ const PublicityCardProductName: React.FC<PublicityCardProductNameProps> = ({
     <h1
 			data-resize={PublicityCardContextProps.resize}
 			data-bold={!noBold}
-			className={`data-[bold=true]:font-bold data-[resize=true]:mt-[-45px] ${size ? 'text-['+size+'rem]':'text-[1rem]'}`}>
+			className={`data-[bold=true]:font-bold data-[resize=true]:mt-[-45px] ${size ? 'text-['+size+'rem]':'text-[1rem]'} ${className}`}>
         { name.substring(0, subtring ? subtring:54) }...
     </h1>
   )

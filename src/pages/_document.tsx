@@ -8,7 +8,6 @@ export default function Document() {
       <body>
         <Head />
         <Header />
-        <BuyWith/>
         <Main />
         <NextScript />
        {/*  <Footer /> */}

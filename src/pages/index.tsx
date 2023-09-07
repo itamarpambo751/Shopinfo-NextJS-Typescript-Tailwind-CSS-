@@ -6,7 +6,7 @@ import { ArrowRight } from "phosphor-react";
 import { BsFire } from "react-icons/bs";
 import { categories } from "./api/data"
 
-export default ():React.JSX.Element => {
+export default function App() {
   return (
     <div>
       <Banner.Image url="./assets/img/bcg5.jpg"/>
