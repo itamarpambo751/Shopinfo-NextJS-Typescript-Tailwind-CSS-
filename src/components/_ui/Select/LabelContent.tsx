@@ -1,4 +1,3 @@
-import { ElementType } from "react"
 
 interface LabelContentProps {
     icon?: string

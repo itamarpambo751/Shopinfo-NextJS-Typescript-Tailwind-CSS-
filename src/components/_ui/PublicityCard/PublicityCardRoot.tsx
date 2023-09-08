@@ -1,7 +1,6 @@
 import React, { ReactNode } from 'react';
 import PublicityCardRootContext from './PublicityCardContext';
 import Link from 'next/link';
-import { twMerge } from 'tailwind-merge'
 
 interface PublicityCardRootProps {
   id: string
@@ -25,7 +24,7 @@ const PublicityCardRoot: React.FC<PublicityCardRootProps> = ({
 					data-hover={!effect}
 					data-transparent={!transparent}
 					data-resize={resize}
-					className={twMerge(`grid data-[resize=false]:grid-cols-2 data-[hover=true]:effect-hover p-5 data-[transparent=true]:bg-[#1e1e1e81] rounded-md data-[resize=true]:grid-row-2 ${className}`)}
+					className={`grid data-[resize=false]:grid-cols-2 data-[hover=true]:effect-hover p-5 data-[transparent=true]:bg-[#1e1e1e81] rounded-md data-[resize=true]:grid-row-2 ${className}`}
 				>
           {children}
         </div>

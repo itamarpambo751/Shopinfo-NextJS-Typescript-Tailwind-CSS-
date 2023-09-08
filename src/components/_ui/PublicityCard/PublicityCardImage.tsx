@@ -1,6 +1,5 @@
 import React, { useContext } from 'react';
 import PublicityCardRootContext from './PublicityCardContext';
-import { twMerge } from 'tailwind-merge'
 
 interface PublicityCardImageProps {
   url: string
@@ -15,7 +14,7 @@ const PublicityCardImage: React.FC<PublicityCardImageProps> = ({
   return (
     <div
 			data-resize={PublicityCardContextProps.resize}
-			className={twMerge("data-[resize=false]:w-[300px] data-[resize=false]:h-[300px] data-[resize=true]:w-[210px] data-[resize=true]:h-[210px] flex justify-center items-center")}
+			className="data-[resize=false]:w-[300px] data-[resize=false]:h-[300px] data-[resize=true]:w-[210px] data-[resize=true]:h-[210px] flex justify-center items-center"
 		>
       <img
 				src={url}

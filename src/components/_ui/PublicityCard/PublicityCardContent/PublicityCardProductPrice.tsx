@@ -1,5 +1,4 @@
 import React from 'react';
-import { twMerge } from 'tailwind-merge'
 
 interface PublicityCardProductPriceProps {
   price: string
@@ -15,10 +14,10 @@ const PublicityCardProductPrice: React.FC<PublicityCardProductPriceProps> = ({
 
   return (
     <div
-			data-extra={extra} className={twMerge("flex flex-col -space-y-1 data-[extra=true]:-space-y-4")}>
+			data-extra={extra} className="flex flex-col -space-y-1 data-[extra=true]:-space-y-4">
       {oldPrice && <small data-extra={extra} className="text-gray-500 data-[extra=true]:text-[1.1rem] font-light">DE: R$ {oldPrice}</small>}
         <label>
-            <span data-resize={resize} data-extra={extra} data-color={color} className={twMerge("text-[1.8rem] text-[var(--red-text-color)] data-[resize=true]:text-[1.2rem] data-[resize=undefined]:data-[extra=true]:text-[2.7rem] data-[color=true]:text-[var(--green-color)] font-bold")}>
+            <span data-resize={resize} data-extra={extra} data-color={color} className="text-[1.8rem] text-[var(--red-text-color)] data-[resize=true]:text-[1.2rem] data-[resize=undefined]:data-[extra=true]:text-[2.7rem] data-[color=true]:text-[var(--green-color)] font-bold">
                 R$ { price }
             </span>
             {!extra && <small className='text-[.77rem] text-white'> no pix</small>}
