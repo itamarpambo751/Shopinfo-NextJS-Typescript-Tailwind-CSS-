@@ -508,7 +508,7 @@ export default function page() {
 												</div>
 											</div>
 											<div className='relative h-40 border border-[var(--border-color)] rounded-lg p-3 flex justify-center items-center'>
-												<span className='absolute top-0 left-2 text-5xl font-extrabold'>"</span>
+												<span className='absolute top-0 left-2 text-5xl font-extrabold'>&quot;</span>
 												<p className='text-left mt-10 px-4 font-extralight text-[15px] text-[silver]'>
 													Superou as expectivas, processador bruto, para jogos que exigem muito do processador, vega7 superou... <button className='uppercase font-bold text-[var(--red-text-color)] mb-5'>Leia+</button>
 
@@ -520,7 +520,7 @@ export default function page() {
 														<i className='text-[.8rem] text-[var(--star-color)]'><BsStarFill/></i>
 													</span>
 												</p>
-												<span className='absolute -bottom-4 right-2 text-5xl font-extrabold'>"</span>
+												<span className='absolute -bottom-4 right-2 text-5xl font-extrabold'>&quot;</span>
 											</div>
 											<p className='text-left text-[15px] mt-[-5px]'>
 												33 pessoas acharam esta avaliação útil

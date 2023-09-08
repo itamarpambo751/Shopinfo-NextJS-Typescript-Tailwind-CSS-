@@ -40,7 +40,7 @@ const FindYourPC : React.FC = () => {
               </Select.Root>
             </div>
             <button className='w-[12%] h-[46px] px-3 bg-[var(--red-text-color)] mt-2'>
-              <span className='text-[1.2rem] font-bold uppercase flex items-center justify-center gap-2'>Buscar <label>{'>'}</label></span>
+              <span className='text-[1.2rem] font-bold uppercase flex items-center justify-center gap-2'>Buscar <label>{/* {'>'} */}</label></span>
             </button>
           </div>
         </form>
