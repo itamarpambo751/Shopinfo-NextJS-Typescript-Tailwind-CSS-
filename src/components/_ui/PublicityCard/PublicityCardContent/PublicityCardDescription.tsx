@@ -2,7 +2,6 @@ import React, { useContext } from 'react';
 import PublicityCardProductPrice from './PublicityCardProductPrice';
 import PublicityCardContentContext from './PublicityCardContentContext';
 import PublicityCard from '..';
-import { twMerge } from 'tailwind-merge'
 
 interface Setting {
     imgUrl: string
@@ -37,11 +36,11 @@ const PublicityCardDescription: React.FC<PublicityCardDescriptionProps> = ({
                             <img
 															src={url}
 															data-resize={PublicityCardContextProps.resize}
-															className={twMerge("w-[15px] data-[resize=true]:w-[13px]")}
+															className="w-[15px] data-[resize=true]:w-[13px]"
 														/>
                             <span
 															data-resize={PublicityCardContextProps.resize}
-															className={twMerge("text-[.9rem] data-[resize=true]:text-[.77rem]")}
+															className="text-[.9rem] data-[resize=true]:text-[.77rem]"
 														>
 															{setting}
 														</span>
