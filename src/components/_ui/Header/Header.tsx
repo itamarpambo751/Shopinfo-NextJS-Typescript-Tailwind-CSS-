@@ -7,12 +7,16 @@ import Link from 'next/link'
 
 const Header:React.FC = () => {
   return (
-    <header className="w-[100%] sticky top-[-60px] z-[999]">
-      <div className="w-[100%] h-[60px] flex items-center justify-center bg-[#FE093C]">
+    <header className="w-screen sticky top-[-60px] z-[999]">
+      <div className="w-full h-[60px] flex items-center justify-center bg-[#FE093C]">
         <img src="./assets/img/header.webp" className='object-cover'/>
       </div>
-        <div className="h-[100px] bg-[black]  flex w-[100%] justify-between items-center gap-12 m-auto">
-          <section className='flex gap-10'>
+
+    <div className='flex items-center justify-center bg-black w-full p-2 '>
+     
+        <div className="h-[100px] bg-[black] flex w-[95%] justify-between items-center gap-12 m-auto">
+        
+          <section className='flex px-2 gap-10 w-[100%]'>
             <Link href='/'>
               <img src="./assets/img/logo1.png" alt="logo" className='pb-1'/>
             </Link>
@@ -76,7 +80,8 @@ const Header:React.FC = () => {
               </ul>
             </div>
           </section>
-          <section className='hidden justify-between items-center w-[100%]'>
+
+          <section className='hidden justify-between items-center w-[0%]'>
             <button>
               <i className='text-white text-[2rem]'>
                 {/* <List/> */}
@@ -97,6 +102,7 @@ const Header:React.FC = () => {
             </div>
           </section>
         </div>
+    </div> 
     </header>
   )
 }
