@@ -1,7 +1,7 @@
 import React from 'react';
 import { PublicityCard, PublicityLabel, Section } from '../_ui';
-// import { BsAlarm } from 'react-icons/bs';
-// import { Truck } from 'phosphor-react';
+import { BsAlarm } from 'react-icons/bs';
+import { Truck } from 'phosphor-react';
 
 const Oferts: React.FC = () => {
 
@@ -20,7 +20,7 @@ const Oferts: React.FC = () => {
                 PC Gamer Barato! Só no Agosto Gamer da Shopinfo.
               </h1>
               <PublicityLabel.Root expires>
-                {/* <PublicityLabel.Icon icon={BsAlarm}/> */}
+                <PublicityLabel.Icon icon={BsAlarm}/>
                 <PublicityLabel.Content
                   bigText="27D 14:54:32"
                   smallText="Ofertas expiram em"
@@ -29,14 +29,17 @@ const Oferts: React.FC = () => {
             </div>
 
             {/**All Publicities Oferts */}
-            <div className="grid grid-cols mt-4 gap-4">
+            <div className="grid grid-cols mt-4 gap-4 max-md:flex max-md:flex-col">
 
-              <PublicityCard.Root id='1'>
-                <PublicityCard.Image url="./assets/img/1(2).png"/>
+              <PublicityCard.Root id='1' >
+                <div>
+                  <PublicityCard.Image url="./assets/img/1(2).png"/>
+                </div>
+                
                 <PublicityCard.Content.Root>
                   <div className='mb-12'>
                     <PublicityLabel.Root free>
-                      {/* <PublicityLabel.Icon icon={Truck}/> */}
+                      <PublicityLabel.Icon icon={Truck}/>
                       <PublicityLabel.Content
                         bigText="FRETE GRÁTIS*" bold small
                       />
@@ -47,6 +50,7 @@ const Oferts: React.FC = () => {
                       />
                     </PublicityLabel.Root>
                   </div>
+
                   <div className="space-y-3">
                     <PublicityCard.Content.Stars value={246}/>
                     <PublicityCard.Content.Product name="Pc Gamer AMD Ryzen 5 5600G 16GB (Radeon Vega 7 Integrado..."/>
@@ -64,7 +68,7 @@ const Oferts: React.FC = () => {
                 </PublicityCard.Content.Root>
               </PublicityCard.Root>
 
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-2 gap-4 max-md:flex max-md:flex-col">
                 <PublicityCard.Root id='2' resize>
                   <PublicityCard.Image url="./assets/img/1(5).png"/>
                   <PublicityCard.Content.Root>
@@ -97,7 +101,7 @@ const Oferts: React.FC = () => {
               </div>
             </div>
 
-            <div className="grid grid-cols mt-4 gap-4">
+            <div className="grid grid-cols mt-4 gap-4 max-md:flex max-md:flex-col">
 
               <PublicityCard.Root id='4'>
                 <PublicityCard.Image url="./assets/img/1(3).png"/>
@@ -132,7 +136,7 @@ const Oferts: React.FC = () => {
                 </PublicityCard.Content.Root>
               </PublicityCard.Root>
 
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-2 gap-4 max-md:flex max-md:flex-col">
                 <PublicityCard.Root id='5' resize>
                   <PublicityCard.Image url="./assets/img/3.png"/>
                   <PublicityCard.Content.Root>

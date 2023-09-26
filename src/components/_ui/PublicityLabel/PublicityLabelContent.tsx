@@ -6,13 +6,14 @@ interface PublicityLabelContentProps {
     bold?: Boolean
     extrabold?: Boolean
     small?: Boolean
+    widthTotal?: Boolean
 }
 
 const PublicityLabelContent: React.FC<PublicityLabelContentProps> = ({
-    smallText, bigText, bold, small, extrabold
+    smallText, bigText, widthTotal, bold, small, extrabold
 }: PublicityLabelContentProps) => {
   return (
-    <span className="flex flex-col text-[.8rem] text-center">
+    <span className={`flex flex-col text-[.8rem] text-center w-[${widthTotal?'100%':''}] `}>
         { smallText && (
             <p>{ smallText }</p>
         )}

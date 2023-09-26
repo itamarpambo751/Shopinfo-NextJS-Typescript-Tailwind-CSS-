@@ -11,7 +11,7 @@ const IconButton: React.FC<IconButtonProps> = ({
 }: IconButtonProps) => {
 	return (
 		<button className={`
-			flex justify-center items-center gap-3 bg-[var(--red-text-color)]
+			flex justify-center text-[var(--background-color)] items-center gap-3 bg-[var(--red-text-color)]
 			px-14 py-3 rounded-md ${uppercase && 'uppercase'} ${bold && 'font-bold'} text-xl`}
 			>
 			{Icon && <i className='text-2xl'> <Icon /> </i>}

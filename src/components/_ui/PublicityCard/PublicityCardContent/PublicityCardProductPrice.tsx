@@ -6,24 +6,26 @@ interface PublicityCardProductPriceProps {
   resize?: Boolean
   oldPrice?: string
 	extra?: Boolean
+  text10x_in_price?: Boolean
 }
 
 const PublicityCardProductPrice: React.FC<PublicityCardProductPriceProps> = ({
-  oldPrice, price, resize, color, extra
+  oldPrice, price, resize, color, extra, text10x_in_price
 }: PublicityCardProductPriceProps) => {
 
   return (
     <div className={`flex flex-col ${extra ? '-space-y-4':'-space-y-1'}`}>
-      {oldPrice &&<s><small className={` ${extra && 'text-[0.8rem] font-light'}`}>DE: R$ { oldPrice }</small></s>}
+      {oldPrice &&<s className='text-[var(--text-color-lite)]'><small className={`text-[var(--text-color-lite)] ${extra && 'text-[0.8rem] font-light'}`}>DE: R$ { oldPrice }</small></s>}
         <label className={``}>
-            <span className={`${resize ? 'text-[1.2rem]': extra ? 'text-[2.7rem]':'text-[1.8rem]'} ${color ? ' text-[var(--green-color)]':'text-[var(--red-text-color)]'} font-bold`}>
-                R$ { price }
+            <span className={`${resize ? 'text-[1.2rem]': extra ? 'text-[2.7rem]':'text-[1.8rem]'} ${color ? ' text-[var(--first-color)]':'text-[var(--red-text-color)]'} font-bold`}>
+               {text10x_in_price ? "10X R$ "+price:"R$ "+price}
+                
             </span>
-            {!extra && <small className='text-[.77rem] text-white'> no pix</small>}
+            {!extra && !text10x_in_price && <small className='text-[.77rem] text-white'> no pix</small>}
         </label>
 				{!extra && (
-					<small className={`block text-white text-[.77rem]`}>
-						10x R$ 255,67 sem juros
+					<small className={`text-[var(--text-color-lite)] block text-[.77rem]`}>
+               {text10x_in_price ? "ou por R$ 255,67 no Pix":"10x R$ 255,67 sem juros"}            
 					</small>
 				) }
 				{extra && (

@@ -1,5 +1,5 @@
 import React from 'react';
-//import { WhatsappLogo, Question } from 'phosphor-react'
+import { WhatsappLogo, Question } from 'phosphor-react'
 
 interface BuyWithProps {
     whatsap?:Boolean
@@ -14,14 +14,14 @@ const BuyWith: React.FC<BuyWithProps> = ({ whatsap, facebook, help }: BuyWithPro
             justify-center items-center bg-[var(--whatsap-color)] cursor-pointer
         '>
             <i className='text-white text-[2.5rem]'>
-                {/* <WhatsappLogo/> */}
+                <WhatsappLogo/>
             </i>
         </li>
         <li className='absolute top-[5rem] w-[60px] p-[.6rem] h-[60px] rounded-full flex 
             justify-center items-center bg-[#FFF] cursor-pointer
         '>
-            <i className='text-black text-[2.5rem]'>
-                {/* <Question/> */}
+            <i className='text-black shadow-[0px_0px_0px_var(--shadow-color)] text-[2.5rem]'>
+            <Question/>
             </i>
         </li>
     </ul>

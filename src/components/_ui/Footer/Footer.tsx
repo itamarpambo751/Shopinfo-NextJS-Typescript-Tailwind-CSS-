@@ -2,8 +2,8 @@ import React from 'react';
 
 const Footer: React.FC = () => {
   return (
-    <footer className='w-[100%] h-[750px]'>
-        <div className='bg-[#202020] h-[250px] text-center pt-10'>
+    <footer className='w-[100%] h-[750px] text-white bg-[#3e3e3e]'>
+        <div className=' text-[white] h-[250px] text-center pt-10'>
             <h1 className='text-[2.6rem] font-bold'>Assine a Newsletter Shopinfo</h1>
             <span className='text-[1.3rem] font-thin'>Tenha acesso às promoções e novidades antes de todo mundo.</span>
 
@@ -138,7 +138,7 @@ const Footer: React.FC = () => {
         </div>
     </div>
 </div>
-<div className='w-[100%] bg-[#202020] h-[100px] flex justify-center items-center'>
+<div className='w-[100%] bg-black text-white  h-[100px] flex justify-center items-center'>
     <p>FORMAS DE PAGAMENTO</p>
     <div className='flex w-[40%] justify-around'>
     <img className='w-[50px] h-[20px]' src='./assets/icons/footer-stamps-visa.png' />
@@ -154,7 +154,7 @@ const Footer: React.FC = () => {
 
 </div>
 </div>
-<div className='w-[90%] flex items-center h-[100px] justify-around'>
+<div className='w-[100%] bg-[black] flex items-center h-[100px] justify-around'>
     <div className='text-[12px] text-zinc-500'>
         <p>qwijw9euw ewue78wye w7ew7et7rtwer 7wet7wt87etw7er 7wy78eywgsgdgsdgusygdf sgydgs7gd7ffe7wf wgg7egfygysgd ysgdgsdgsydgf6we6wgsydc ysgdcgs7tdc7stdfisidf</p>
     </div>

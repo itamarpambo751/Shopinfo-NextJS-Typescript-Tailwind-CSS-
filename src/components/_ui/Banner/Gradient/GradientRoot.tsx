@@ -10,7 +10,7 @@ const GradientRoot: React.FC<GradientRootProps> = ({
     children
 }: GradientRootProps) => {
   return (
-    <div className='w-full relative'>
+    <div className='w-full relative text-[var(--background-color)]'>
         { children }
     </div>
   )

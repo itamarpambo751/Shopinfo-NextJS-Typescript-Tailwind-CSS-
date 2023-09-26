@@ -10,7 +10,7 @@ const InterTripleNavigation: React.FC<InterTripleNavigationProps> = ({
     labels
 }: InterTripleNavigationProps) => {
   return (
-    <div className="w-[50%] m-auto mt-14 flex justify-between items-center">
+    <div className="w-[50%] m-auto text-black mt-14 flex justify-between items-center">
         <label className="relative">
             <span className="border border-[var(--red-color)] cursor-pointer w-16 h-16 rounded-full flex justify-center items-center bg-[var(--red-color)]">
                 1
