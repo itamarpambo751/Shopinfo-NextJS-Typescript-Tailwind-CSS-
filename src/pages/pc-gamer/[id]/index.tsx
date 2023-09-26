@@ -1,20 +1,56 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
+import { useRouter } from 'next/router';
 import { Shopinfo } from "@/components";
 import { categories } from '@/pages/api/data';
 import { Banner, Hr,Categories, IconButton, PublicityCard, PublicityLabel, Section } from '../../../components/_ui';
-// import { CaretLeft, CaretRight, Heart, Truck } from 'phosphor-react';
+import { CaretLeft, CaretRight, Heart, Truck } from 'phosphor-react';
 import { BsShare, BsCart4 } from 'react-icons/bs';
 import {VscThumbsup,VscThumbsdown} from 'react-icons/vsc'
 import { ComputerImageList, ComputerDescription } from '../../../components/pc-gamer';
 import { imageUrls } from '../../api/data';
 import { Card } from '@/cards';
+import { product } from '@/pages/api/data';
 
 interface UrlObjects {
 	url: string,
 	current?: Boolean
 }
 
+interface informations{
+	id:number
+    tipo:string
+    name:string
+	cod_post:string,
+    referencia:string,
+    marca:string,
+    price:string,
+    desconto:string,
+    quantidade:number,
+    img:string
+}
+
 export default function IdPcGamer(){
+	const router = useRouter();
+	const { id } = router.query;
+	const idValor = typeof id === 'string' ? id : '';
+
+	const [OficialProduct, setOficialProduct] = useState<any>({})
+	
+	const [productos, setProductos] = useState<product>(() => {
+		return product;
+	  });
+
+	  useEffect(() => {
+		const productEncontrado = product.find((i) => i.id === parseInt(idValor));
+		if (productEncontrado) {
+		  setOficialProduct(productEncontrado);
+		}
+	  }, []); 
+
+	  useEffect(() => {
+		console.log(OficialProduct);
+	  }, [OficialProduct]); 
+
 
 	const [currentImage, setCurrentImage] = useState<UrlObjects>(() => {
 		return imageUrls[0]
@@ -24,7 +60,7 @@ export default function IdPcGamer(){
     <div>
       <Banner.Gradient.Root>
         <Banner.Gradient.Container section='Home > Computadores Gamer > Exclusivos neologic'>
-<div className='flex w-full'>
+<div className='flex w-full text-black'>
 
 <div className='flex flex-col w-full'>
           <div className='flex flex-1 gap-16 w-[100%]'>
@@ -34,13 +70,13 @@ export default function IdPcGamer(){
 								<span className='text-[.8rem]'>
 									<PublicityCard.Content.Stars value={234}/>
 								</span>
-								| <span className='uppercase text-green-500 text-sm'>Neologic</span> |
+								| <span className='uppercase text-green-500 text-sm'>{OficialProduct.marca}</span> |
 								<span className='flex justify-start items-center gap-5'>
 									<i className='text-[1.8rem]'>
 									<BsShare />
 									</i>
 									<i className='text-[1.8rem]'>
-									00{/* <Heart /> */}
+									<Heart /> 
 									</i>
 								</span>
 							</div>
@@ -48,22 +84,22 @@ export default function IdPcGamer(){
 								<div className='relative w-full h-full flex flex-col justify-center items-center'>
 									<div className='w-full absolute top-2 left-0 flex justify-start items-center gap-3'>
 										<PublicityLabel.Root>
-											<PublicityLabel.Content bigText='-27%' bold/>
+											<PublicityLabel.Content bigText={OficialProduct.desconto} bold/>
 										</PublicityLabel.Root>
 										<PublicityLabel.Root free>
-											{/* <PublicityLabel.Icon icon={Truck}/> */}
+											<PublicityLabel.Icon icon={Truck}/>
 											<PublicityLabel.Content bigText='' smallText='GRÁTIS'/>
 										</PublicityLabel.Root>
 									</div>
 									<button className='cursor-pointer p-5 rounded-full transition duration-200 hover:bg-[#1e1e1e81] absolute top-[40%] left-0 text-[red] text-2xl'>
 										<i className='cursor-pointer'>
-											{'<'}{/* <CaretLeft/> */}
+											<CaretLeft/>
 										</i>
 									</button>
-									<img src={currentImage.url} className='w-full object-cover scale-[2.3] mt-[-130px] z-[-1]'/>
+									<img src={OficialProduct.img} className='w-full object-cover scale-[2.3] mt-[-130px] z-[-1]'/>
 									<button className='cursor-pointer p-5 rounded-full transition duration-200 hover:bg-[#1e1e1e81] absolute top-[40%] right-0 text-[red] text-2xl'>
 										<i className='cursor-pointer'>
-										{'>'}{/* <CaretRight/> */}
+										 <CaretRight/>
 										</i>
 									</button>
 									</div>
@@ -114,7 +150,7 @@ export default function IdPcGamer(){
 							</section>
 						</div>
 							</div>
-								<ComputerDescription />
+								<ComputerDescription key={OficialProduct.id} nome={OficialProduct.name} preco={OficialProduct.price} codigo={OficialProduct.cod_post}/>
 								
 							</div>
 						</div>
@@ -130,15 +166,16 @@ export default function IdPcGamer(){
 					<div className='h-[400px] flex flex-col items-center'>
 						<h1 className='text-4xl font-extrabold'>Compre Junto</h1>
 			
-	<div className='w-[100%] flex items-center'>						
-		<div className='w-[40%] flex'>
+	<div className='w-[100%] flex mt-[80px] items-center'>						
+		<div className='w-[40%] flex justify-between'>
 							<PublicityCard.Root
 								id='14'
 								noHoverEffect
-								transparent
-							>
+								transparent>
+
+					<div className='w-[100%] flex justify-end'>
 						<PublicityCard.Image url={currentImage.url}/>
-					
+					</div>			
 						<div className='w-[100%] flex items-center justify-center'>
 									<PublicityCard.Content.Product
 										name='Pc Gamer AMD Ryzen 5 5600G 16GB (Radeon Vega 7 Integrado) SSD 240GB, 500W 80 Plus, Neologic - NLI82731'
@@ -193,8 +230,8 @@ export default function IdPcGamer(){
 		<h1 className='text-4xl font-extrabold'>Desempenho Aproximado</h1>
 	<div className='w-[80%] mt-[70px] flex items-center justify-around '>
 	
-	<i className='cursor-pointer text-red-500'>
-		{'<'}{/* <CaretLeft/> */}
+	<i className='cursor-pointer font-semibold text-red-500'>
+		 <CaretLeft/> 
 	</i>
 	<div className='flex items center justify-around w-[80%]'>
 	
@@ -204,34 +241,34 @@ export default function IdPcGamer(){
 	</div>
 		
 		<div className='w-[60%] flex flex-col p-2'>
-			<h1 className='h-[80%]'>GTA V</h1>
+			<h1 className='h-[80%] font-bold'>GTA V</h1>
 			<p className='text-[12px]'>Full HD</p>
-			<p className='text-[var(--green-color)] text-[12px]'>75FPS LOW</p>
+			<p className='text-[var(--first-color)] font-bold text-[12px]'>75FPS LOW</p>
 		</div>
 	</div>
 
 	<div className='w-[200px] h-[120px] flex items center'>
 		<img src='../assets/img/game(2).jpg' className='w-[40%] h-full'/> 
 		<div className='w-[60%] flex flex-col px-1'>
-			<h1 className='h-[80%]'>GTA V</h1>
+			<h1 className='h-[80%] font-bold'>GTA V</h1>
 			<p className='text-[12px]'>Full HD</p>
-			<p className='text-[var(--green-color)] text-[12px]'>75FPS LOW</p>
+			<p className='text-[var(--first-color)] font-bold text-[12px]'>75FPS LOW</p>
 		</div>
 	</div>
 
 	<div className='w-[200px] h-[120px] flex items center'>
 		<img src='../assets/img/game(3).png' className='w-[40%] h-full'/> 
 		<div className='w-[60%] flex flex-col px-1'>
-			<h1 className='h-[80%]'>GTA V</h1>
+			<h1 className='h-[80%] font-bold'>GTA V</h1>
 			<p className='text-[12px]'>Full HD</p>
-			<p className='text-[var(--green-color)] text-[12px]'>75FPS LOW</p>
+			<p className='text-[var(--first-color)] font-bold text-[12px]'>75FPS LOW</p>
 		</div>
 	</div>
 
 	</div>
 	
-	<i className='cursor-pointer text-red-500'>
-		{'>'}{/* <CaretLeft/> */}
+	<i className='cursor-pointer font-semibold text-red-500'>
+		 <CaretRight/> 
 	</i>
 
 	</div>
@@ -244,7 +281,7 @@ export default function IdPcGamer(){
 
 <div className='w-[100%] flex items-center justify-around'>
 	<Hr className={'border-red-600 w-[120px]'} />
-		<div className='flex flex-col items-center justify-center'>
+		<div className='flex flex-col items-center text-black justify-center'>
 		<h1 className='uppercase text-[20px]'>produtos Recomendados</h1>
 		<p className='uppercase text-[30px] text-bold' >Para voce</p>
 		</div>
@@ -269,13 +306,13 @@ export default function IdPcGamer(){
 
 	<div className='flex items-center'>
 <section className='flex flex-col w-[50%] '>
-<div className='w-[100%] flex items-center justify-center'>
+<div className='w-[100%] flex items-center justify-center text-black'>
 	<p className='flex titems-center text-[24px] font-bold mb-[100px]'>Nossos Numeros</p>
 </div>
 
 <div className='flex items-center w-[80%] justify-around'>
 	<div className='w-[85px] h-[120px]'>
-		<div className='w-[100%] h-[70%] rounded-full border-[5px] border-red-600 flex items-center justify-center'>
+		<div className='w-[100%] h-[70%] rounded-full border-[5px] border-[var(--first-color)] flex items-center justify-center'>
 			25k
 		</div>
 		<div className='mt-[3px] text-[12px] w-full text-center w-full'>
@@ -284,7 +321,7 @@ export default function IdPcGamer(){
 	</div>
 
 <div className='w-[85px] h-[120px]'>
-		<div className='w-[100%] h-[70%] rounded-full border-[5px] border-red-600 flex items-center justify-center'>
+		<div className='w-[100%] h-[70%] rounded-full border-[5px] border-[var(--first-color)] flex items-center justify-center'>
 			25k
 		</div>
 		<div className='mt-[3px] text-[12px] w-full text-center w-full'>
@@ -293,7 +330,7 @@ export default function IdPcGamer(){
 	</div>
 
 <div className='w-[85px] h-[120px]'>
-		<div className='w-[100%] h-[70%] rounded-full border-[5px] border-red-600 flex items-center justify-center'>
+		<div className='w-[100%] h-[70%] rounded-full border-[5px] border-[var(--first-color)] flex items-center justify-center'>
 			25k
 		</div>
 		<div className='mt-[3px] text-[12px] w-full text-center w-full'>
@@ -310,11 +347,11 @@ export default function IdPcGamer(){
 </div>
 
 <div className='flex items-center w-[100%] mt-[40px]'>
-<i className='w-[40px] h-[40px] flex items-center justify-center font-bold bg-red-600 rounded-full'>{'<'}</i>
+<i className='w-[40px] h-[40px] flex items-center justify-center font-bold bg-[var(--first-color)] rounded-full'>{'<'}</i>
 <div className='flex items-center w-[80%]'>
 	<div className='w-[50%] flex items-center justify-center'>
-		<div className='bg-red-600 relative rounded-[20px] w-[190px] flex justify-center items-center h-[220px]'>
-			<div className='flex absolute  p-1 flex-col w-[200px] h-[90%]  bg-zinc-600'>
+		<div className='bg-[var(--first-color)] relative rounded-[20px] w-[190px] flex justify-center items-center h-[220px]'>
+			<div className='flex absolute text-white  p-1 flex-col w-[200px] h-[90%]  bg-black'>
 			<span className='w-full flex items-center'>
 			<i>G</i>
 				<p>DFPM</p>
@@ -327,8 +364,8 @@ export default function IdPcGamer(){
 	</div>
 
 	<div className='w-[50%]  flex items-center justify-center'>
-		<div className='bg-red-600 relative rounded-[20px] w-[190px] flex justify-center items-center h-[220px]'>
-			<div className='flex absolute  p-1 flex-col w-[200px] h-[90%]  bg-zinc-600'>
+		<div className='bg-[var(--first-color)] relative rounded-[20px] w-[190px] flex justify-center items-center h-[220px]'>
+			<div className='text-white flex absolute  p-1 flex-col w-[200px] h-[90%]  bg-black'>
 			<span className='w-full flex items-center'>
 			<i>G</i>
 				<p>DFPM</p>
@@ -340,7 +377,7 @@ export default function IdPcGamer(){
 		</div>
 	</div>
 </div>
-<i  className='w-[40px] h-[40px] flex items-center justify-center font-bold bg-red-600 rounded-full'>{'>'}</i>
+<i  className='w-[40px] h-[40px] flex items-center justify-center font-bold bg-[--first-color] rounded-full'>{'>'}</i>
 </div>
 </section>
 	</div>

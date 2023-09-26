@@ -1,16 +1,56 @@
-import React from 'react';
+import React,{useState, useEffect} from 'react';
 import { Shopinfo } from "../../components";
-import { Banner, Categories,Footer,Hr,InterTripleNavigation, PublicityCard, PublicityLabel, Section, Settings } from "../../components/_ui";
+import { Banner, Categories,Footer,Header,Hr,InterTripleNavigation, PublicityCard, PublicityLabel, Section, Settings } from "../../components/_ui";
 import { categories } from '@/pages/api/data';
 import { BsFire } from "react-icons/bs";
 import { Card } from '@/cards';
-import {inform} from '@/pages/api/data'
+import {product} from '@/pages/api/data'
+import {marca} from '@/pages/api/data'
+
 
 export const metadata = {
   title: 'PC Gamer'
 }
 export default function PcGamer(){
+  let divisao:string[];
+  let divisaoV2:string[];
+
+  const [filterProduct, setFilterProduct] = useState('');
+  const [filterlateralMenu, setFilterLateralMenu] = useState('');
+  const [Types, setTypes] = useState<any>([])
+  const [itemsMenu, setItemsMenu] = useState<any>([])
+  const [products, setProducts] = useState<product>(()=>{
+    return product
+ })
+ const [itemsLateraMenu,setItemsLateralMenu] = useState<marca>(()=>{
+  return marca
+})
+
+const valueSearcCheckBox = (value: string) => {
+  setFilterProduct(value);
+};
+const valeuSearchLateralList = (value: string) => {
+  setFilterLateralMenu(value);
+};
+
+useEffect(() => {
+  if(filterlateralMenu=="")
+  setItemsMenu(itemsLateraMenu)
+  else
+  setItemsMenu(itemsLateraMenu.filter((i)=>i.toLowerCase().startsWith(filterlateralMenu.toLocaleLowerCase())))
+},[filterlateralMenu]); 
+
+
+useEffect(() => {
+  if(filterProduct=="")
+ setTypes(products.filter((i)=>i.tipo==='pc-gamer'))
+  else
+ setTypes(products.filter((i)=>i.marca===filterProduct))
+},[filterProduct]); 
+
   return (
+    <> 
+    <Header />
     <div className='w-screen'>
 
       <Banner.Gradient.Root>
@@ -59,23 +99,19 @@ export default function PcGamer(){
 
 <div className='w-[20%]'>
  
- <Card.CardFiltro label='Produto'
-    
+ <Card.CardFiltro label='marca' onInputvalue={valeuSearchLateralList}
     options={
-      inform.map((i)=>
-      (<Card.CheckListCard item={i.toString()} />))
+      itemsMenu.map((i)=>
+      (<Card.CheckListCard onInputvalue={valueSearcCheckBox} item={i.toString()} />))
     }
-    
     />
- 
 </div>
-
 
 <div className='w-[80%] flex flex-col'>
 <div className='w-[100%] p-2 grid grid-cols-4 gap-4'>
 {
-    inform.map((i)=>
-    (<Card.SuperCard />))
+    Types.map((i)=>
+    (<Card.SuperCard key={i.id} imgLink={i.img} id={i.id.toString()} name={i.name} price={i.price} desconto={i.desconto}  />))
 }
     
     
@@ -91,5 +127,5 @@ export default function PcGamer(){
 
 </div>
       </div>
-  )
+</>  )
 }

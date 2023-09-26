@@ -1,15 +1,33 @@
-import React from 'react';
+import React,{useState, useEffect} from 'react';
 import { Shopinfo } from "../../components";
-import { Banner, Categories,Footer,Hr,InterTripleNavigation, PublicityCard, PublicityLabel, Section, Settings } from "../../components/_ui";
-// import { ArrowRight } from "phosphor-react";
+import { Banner, Categories,Footer,Header,Hr,InterTripleNavigation, PublicityCard, PublicityLabel, Section, Settings } from "../../components/_ui";
+import { ArrowRight } from "phosphor-react";
 import { BsFire,BsSearch } from "react-icons/bs";
 import { categories } from "../api/data"
 import { Card } from '@/cards';
-import {inform} from '@/pages/api/data'
+import {marca} from '@/pages/api/data'
+import {product} from "@/pages/api/data"
 // import { Container } from './styles';
+
+function any(){
+
+  const [Types, setTypes] = useState<any>([])
+  const [products, setProducts] = useState<product>(()=>{
+    return product
+ })
+
+useEffect(() => {
+
+ setTypes(products.filter((i)=>i.tipo==='acessorio'))
+ 
+},[products]); 
+
+}
 
 const page: React.FC = () => {
   return (
+    <> 
+    <Header />
     <div className='w-[100%] flex flex-col justify-center items-center'>
    
     <div className='w-[100%] flex items-center justify-center'>
@@ -34,7 +52,8 @@ const page: React.FC = () => {
  </div>  
  <div className='w-[80%] flex flex-col mt-[30px] items-center '>
    <div className='w-[100%] flex items-center justify-around'>
-     <h1 className='text-[20px]'>Principais categorias</h1> <Hr className='w-[80%] bg-zinc-500' />
+     <h1 className='text-[20px]'>Principais categorias</h1> 
+     <Hr className='w-[80%] border-[var(--shadow-color)]' />
    </div>  
 
        <div className="w-[100%] mt-[10px] h-[80px] m-auto text-center flex flex-col gap-7">
@@ -45,28 +64,29 @@ const page: React.FC = () => {
     <p>Filtro</p>
   </div>
    <div className='w-[100%] flex justify-end items-center mt-[60px]'>
-           <div className='w-[250px] p-2 h-[80px] border-[1px] border-[white] flex flex-col justify-start items-center'>
-             <p className='uppercase text-[14px] w-[100%]'>ordenar por:</p>
-               <select className='w-[100%] border-none bg-transparent'>
+           <div className='w-[250px] bg-[var(--shadow-color)] p-2 h-[80px] border-[1px] border-[var(--shadow-color)] flex flex-col justify-start items-center'>
+             <p className='uppercase text-[14px] font-semibold w-[100%]'>ordenar por:</p>
+               <select className='w-[100%] text-[#3e3e3e] border-none bg-transparent'>
                  <option>selecione</option>
                </select>
            </div>
       </div>
 </div>
      
-<main className='flex w-[100%] mt-[10px]'>
+<main className='flex justify-between w-[100%] mt-[10px]'>
 
 
-<div className='w-[20%]'>
+<div className='w-[18%]'>
  
- <Card.CardFiltro label='Produto'
+<Card.CardFiltro label='marcas'
     
     options={
-      inform.map((i)=>
-      (<Card.CheckListCard item={i.toString()} />))
+      marca.map((i)=>
+      (<Card.CheckListCard  item={i.toString()} />))
     }
     
     />
+ 
  
 
 </div>
@@ -75,13 +95,12 @@ const page: React.FC = () => {
 <div className='w-[80%] flex flex-col'>
 <div className='w-[100%] p-2 grid grid-cols-4 gap-4'>
 {
-    inform.map((i)=>
-    (<Card.NormalCard  />))
+    product.map((i)=>
+    (<Card.NormalCard key={i.id} imglLink={i.img} id={i.id.toString()} name={i.name} price={i.price} desconto={i.desconto}  />))
 }
     
     
-
-
+    
 </div>
 <div className='w-[100%] flex items-center justify-center mt-[20px] h-[300px]'>
        <PublicityLabel.Root expires={true}>
@@ -95,7 +114,7 @@ const page: React.FC = () => {
  </div> 
 
    </div>
-  )
+   </>)
 }
 
 export default page;

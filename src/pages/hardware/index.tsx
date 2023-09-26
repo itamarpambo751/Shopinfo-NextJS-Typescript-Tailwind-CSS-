@@ -1,6 +1,6 @@
 import React from 'react';
 import { Shopinfo } from "../../components";
-import { Banner, Categories,Footer,Hr,InterTripleNavigation, PublicityCard, PublicityLabel, Section, Settings } from "../../components/_ui";
+import { Banner, Categories,Footer,Header,Hr,InterTripleNavigation, PublicityCard, PublicityLabel, Section, Settings } from "../../components/_ui";
 // import { ArrowRight } from "phosphor-react";
 import { BsFire } from "react-icons/bs";
 import { categories } from "../api/data"
@@ -11,6 +11,8 @@ import {inform} from '@/pages/api/data'
 
 const Hardware =() => {
   return (
+    <> 
+    <Header />
     <div className='w-[100%] flex flex-col justify-center items-center'>
      <div className='w-[100%] flex items-center justify-center'>
      <Banner.Gradient.Root>
@@ -99,7 +101,7 @@ const Hardware =() => {
   </div> 
 
     </div>
-  )
+ </> )
 }
 
 export default Hardware;
