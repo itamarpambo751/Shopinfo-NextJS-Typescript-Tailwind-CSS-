@@ -7,7 +7,7 @@ export default function Document() {
     <Html lang="pt-br">
       <body className='w-screen'>
         <Head />
-        <Header />
+      
         <BuyWith/>
         <Main />
         <NextScript />

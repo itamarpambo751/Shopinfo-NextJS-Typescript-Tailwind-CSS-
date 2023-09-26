@@ -1,17 +1,21 @@
 import { Shopinfo } from "../components";
-import { Banner, Categories, InterTripleNavigation, PublicityCard, PublicityLabel, Section, Settings } from "../components/_ui";
-// import { ArrowRight } from "phosphor-react";
+import { Banner, Categories, Header, InterTripleNavigation, PublicityCard, PublicityLabel, Section, Settings } from "../components/_ui";
+import { ArrowRight } from "phosphor-react";
 import { BsFire } from "react-icons/bs";
 import { categories } from "./api/data"
-
+import React, { useEffect } from "react"
 
 export const metadata = {
   title: 'Shopinfo'
 }
-
 export default function Home(){
+
+
   return (
+    <> 
+    <Header />
     <div>
+
       <Banner.Image url="./assets/img/bcg5.jpg"/>
       <Banner.ImageSection url="./assets/img/underBanner.webp"/>
 
@@ -24,51 +28,52 @@ export default function Home(){
       </Section.Root>
 
       <Section.Root>
-        <div className="w-[90%] m-auto text-center flex flex-col gap-7">
+        <div className="w-[90%] m-auto text-center max-md:w-full max-md:justify-center flex flex-col gap-7">
           <h1 className="text-[1.6rem] font-bold">Principais categorias</h1>
           <Categories categories={categories}/>
        </div>
       </Section.Root>
-
-      <Shopinfo.Oferts />
+<div className='w-screen flex justify-center max-md:mt-[90px]'>
+  <Shopinfo.Oferts />
+</div>
+      
 
       <Section.Root>
-        <div className="h-[700px] bg-[#202020] pt-12">
+        <div className=" h-[700px] bg-[var(--shadow-color)] pt-12">
           <Section.Content>
-            <h1 className="text-4xl font-bold text-center uppercase">Encontre o Pc Gamer Completo Para seus Jogos</h1>
+            <h1 className="text-black text-4xl font-bold text-center uppercase ">Encontre o Pc Gamer Completo Para seus Jogos</h1>
 
             <InterTripleNavigation
               labels={['Selecione seus Jogos','Escolha o Preço','Selecione o Desempenho']}
             />
 
             <ul className="flex justify-between items-center gap-6 mt-28">
-              <li className="h-[185px] w-[160px] rounded-md overflow-hidden">
+              <li className="h-[185px] w-[160px] efect-hover rounded-md overflow-hidden">
                 <img src="./assets/img/game(1).jpg" className="w-[100%] h-[100%] object-cover"/>
               </li>
-              <li className="h-[185px] w-[160px] rounded-md overflow-hidden">
+              <li className="h-[185px] w-[160px] efect-hover  rounded-md overflow-hidden">
                 <img src="./assets/img/game(2).jpg" className="w-[100%] h-[100%] object-cover"/>
               </li>
-              <li className="h-[185px] w-[160px] rounded-md overflow-hidden">
+              <li className="h-[185px] w-[160px] efect-hover  rounded-md overflow-hidden">
                 <img src="./assets/img/game(4).png" className="w-[100%] h-[100%] object-cover"/>
               </li>
-              <li className="h-[185px] w-[160px] rounded-md overflow-hidden">
+              <li className="h-[185px] w-[160px] efect-hover  rounded-md overflow-hidden">
                 <img src="./assets/img/game(7).png" className="w-[100%] h-[100%] object-cover"/>
               </li>
-              <li className="h-[185px] w-[160px] rounded-md overflow-hidden">
+              <li className="h-[185px] w-[160px] efect-hover  rounded-md overflow-hidden">
                 <img src="./assets/img/game(8).png" className="w-[100%] h-[100%] object-cover"/>
               </li>
-              <li className="h-[185px] w-[160px] rounded-md overflow-hidden">
+              <li className="h-[185px] w-[160px] efect-hover  rounded-md overflow-hidden">
                 <img src="./assets/img/game(3).png" className="w-[100%] h-[100%] object-cover"/>
               </li>
-              <li className="h-[185px] w-[160px] rounded-md overflow-hidden">
+              <li className="h-[185px] w-[160px] efect-hover  rounded-md overflow-hidden">
                 <img src="./assets/img/game(6).png" className="w-[100%] h-[100%] object-cover"/>
               </li>
             </ul>
-            <button className="flex justify-center items-center gap-8 bg-[var(--red-color)] m-auto mt-20 px-24 py-3 rounded-md">
+            <button className="flex font-semibold justify-center items-center text-[var(--background-color)] gap-8 bg-[var(--red-color)] m-auto mt-20 px-24 py-3 rounded-md">
               Próxima etapa
               <i>
-                o
-                {/* <ArrowRight /> */}
+                 <ArrowRight />
               </i>
             </button>
           </Section.Content>
@@ -111,7 +116,7 @@ export default function Home(){
           <PublicityCard.Root id="2" resize>
             <div className="flex justify-start items-center gap-2 mb-12">
               <PublicityLabel.Root expires>
-                {/* <PublicityLabel.Icon icon={BsFire}/> */}
+                <PublicityLabel.Icon icon={BsFire}/>
                 <PublicityLabel.Content bigText="14D 17:23:56" bold/>
               </PublicityLabel.Root>
               <PublicityLabel.Root>
@@ -151,7 +156,7 @@ export default function Home(){
           <PublicityCard.Root id="4" resize>
             <div className="flex justify-start items-center gap-2 mb-12">
               <PublicityLabel.Root expires>
-                {/* <PublicityLabel.Icon icon={BsFire}/> */}
+                <PublicityLabel.Icon icon={BsFire}/>
                 <PublicityLabel.Content bigText="14D 17:23:56" bold/>
               </PublicityLabel.Root>
               <PublicityLabel.Root>
@@ -171,7 +176,7 @@ export default function Home(){
           <PublicityCard.Root id="5" resize>
             <div className="flex justify-start items-center gap-2 mb-12">
               <PublicityLabel.Root expires>
-                {/* <PublicityLabel.Icon icon={BsFire}/> */}
+                <PublicityLabel.Icon icon={BsFire}/>
                 <PublicityLabel.Content bigText="14D 17:23:56" bold/>
               </PublicityLabel.Root>
               <PublicityLabel.Root>
@@ -193,13 +198,13 @@ export default function Home(){
       <div className="mt-36">
         <Section.Root>
           <Section.Content>
-            <div className="text-center">
+            <div className="text-center text-[var(--background-color)]">
               <h1 className="uppercase text-4xl font-bold">ESCOLHA SEU PC GAMER</h1>
               <span className="text-xl">de acordo com seu nivel de jogo</span>
               <hr className="border-2 w-20 m-auto mt-3 rounded-xl border-[var(--red-color)]"/>
             </div>
 
-            <ul className="flex justify-between mt-10">
+            <ul className="flex justify-between text-[var(--background-color)] mt-10">
               <li className="rounded-md py-5 efect-hover flex flex-col items-center">
                 <img src="./assets/img/choose2.png"/>
                 <div className="text-center m-auto p-4 w-[90%] rounded-md">
@@ -266,5 +271,5 @@ export default function Home(){
         </div>
       </div>
     </div>
-  )
+    </> )
 }
