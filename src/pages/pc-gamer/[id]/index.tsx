@@ -710,8 +710,18 @@ export default function page() {
 						<Categories categories={spreed_categories} />
 					</div>
 				</Section.Content>
-				<div className='h-[1000px]'>
+				<div>
 					<img src="../assets/img/exclusivo-neologic-banner-topo.webp"/>
+				</div>
+				<div>
+					<h2>Busque a vitória</h2>
+
+					<p>
+						Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quasi similique, alias adipisci ex tempora ipsum debitis aut sunt doloremque obcaecati saepe at animi accusantium commodi id laudantium beatae dolore modi! Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt aliquid laborum porro ea alias odio, cum, veritatis natus eum esse iusto consectetur voluptatibus quaerat quia molestias adipisci sequi facilis velit.
+					</p>
+				</div>
+				<div>
+					<img src="../assets/img/esport-box-maquinas.png"/>
 				</div>
 			</Section.Root>
     </div>
