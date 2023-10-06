@@ -1,43 +1,36 @@
 import React, { useState,useEffect } from 'react';
 import { useRouter } from 'next/router';
-import { Shopinfo } from "@/components";
-import { categories } from '@/pages/api/data';
-import { Banner, Hr,Categories, IconButton, PublicityCard, PublicityLabel, Section, Header } from '../../../components/_ui';
-import { CaretLeft, CaretRight, Heart, Truck } from 'phosphor-react';
-import { BsShare, BsCart4 } from 'react-icons/bs';
-import {VscThumbsup,VscThumbsdown} from 'react-icons/vsc'
-import { ComputerImageList, ComputerDescription } from '../../../components/pc-gamer';
-
 import { Card } from '@/cards';
-import { product } from '@/pages/api/data';
-import { marca } from '@/pages/api/data';
-
-
-export default function SearchProductAll(){
-	const router = useRouter();
-	const { type } = router.query;
-	const typeItems = typeof type === 'string' ? type : '';
-
-
-    const [Types, setTypes] = useState<any>([])
-    const [products, setProducts] = useState<product>(()=>{
-      return product
-   })
-
+import {  PublicityLabel, Header } from '../../../components/_ui';
+import { LateralMenuComplit } from '@/cards/LateralMenuComplit';
+import { useProductsContext } from '@/context/ProdutsContext/ProductContext';
+import { Products } from "@/Types/GloballTypes";
+ 
+const Page:React.FC=()=>{
+     const router = useRouter(); 
+     const AllProducts =useProductsContext()
+     const { type } = router.query;
+     const typeItems = typeof type === 'string' ? type : '';
+       const [Types, setTypes] = useState<Products[]|undefined>()
+       const [searC,setSearC]=useState<string>(typeItems)
+       const [products, setProducts] = useState<Products[]|undefined>(AllProducts?.products)
+       const [filterProduct, setFilterProduct] = useState<string>('');
+       const valeuSearchFilter = (value: string) => {
+        setFilterProduct(value)
+      };
+      useEffect(() => {
+     if(filterProduct!=="")setTypes(products?.filter((i)=>i.marca.toLowerCase().startsWith(filterProduct.toLocaleLowerCase())))
+      },[filterProduct]); 
 
 useEffect(() => {
-
-   setTypes(products.filter((i)=>i.tipo===typeItems))
-   
+   setTypes(products?.filter((i)=>i.tipo.toLocaleLowerCase()===typeItems.toLocaleLowerCase()||i.category.toLocaleLowerCase()===typeItems.toLocaleLowerCase()))
   },[products]); 
-
-  console.log(Types)
 
   return (
 <>
     <Header />
 {
-  Types[0]===undefined?
+  Types?.[0]===undefined?
   <div className='w-full p-10 flex items-center justify-center text-[30px] font-bold'>
    
     <p>Ops!...Items Nao Encontrados!</p>
@@ -64,20 +57,13 @@ useEffect(() => {
 
 <div className='w-[18%]'>
 {
-  Types[0]===undefined?
+  Types?.[0]===undefined?
   <div className='w-full flex items-center justify-center text-[30px] font-bold'>
    
 
 
   </div>:
-  <Card.CardFiltro label='marcas'
-    
-    options={
-      marca.map((i)=>
-      (<Card.CheckListCard key={i.id} item={i.toString()} />))
-    }
-    
-    />
+  <LateralMenuComplit searchPC={false} onInputvalue={valeuSearchFilter} />
  }
  
  
@@ -88,18 +74,18 @@ useEffect(() => {
 <div className='w-[80%] flex flex-col'>
 <div className='w-[100%] p-2 grid grid-cols-4 gap-4 max-md:flex max-md:flex-wrap max-md:gap-[4px]'>
 {
-  Types[0]===undefined?
+  Types?.[0]===undefined?
   <div className='w-full flex items-center justify-center text-[30px] font-bold'>
    
 
   </div>:
-    Types.map((i)=>
+    Types?.map((i)=>
     (<Card.NormalCard key={i.id} imglLink={i.img} id={i.id.toString()} name={i.name} price={i.price} desconto={i.desconto}  />))
 }
       
 </div>
 {
-  Types[0]===undefined?
+  Types?.[0]===undefined?
   <div className='w-full flex items-center justify-center text-[30px] font-bold'>
 
   </div>:<div className='w-[100%] flex items-center justify-center mt-[20px] h-[300px]'>

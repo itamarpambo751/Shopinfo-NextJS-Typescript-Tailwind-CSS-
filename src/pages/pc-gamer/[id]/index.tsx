@@ -2,7 +2,7 @@ import React, { useState,useEffect } from 'react';
 import { useRouter } from 'next/router';
 import { Shopinfo } from "@/components";
 import { categories } from '@/pages/api/data';
-import { Banner, Hr,Categories, IconButton, PublicityCard, PublicityLabel, Section } from '../../../components/_ui';
+import { Banner, Hr,Categories, IconButton, PublicityCard, PublicityLabel, Section, Header } from '../../../components/_ui';
 import { CaretLeft, CaretRight, Heart, Truck } from 'phosphor-react';
 import { BsShare, BsCart4 } from 'react-icons/bs';
 import {VscThumbsup,VscThumbsdown} from 'react-icons/vsc'
@@ -57,7 +57,11 @@ export default function IdPcGamer(){
 	})
 
   return (
+	<>
+	<Header />
+	
     <div>
+
       <Banner.Gradient.Root>
         <Banner.Gradient.Container section='Home > Computadores Gamer > Exclusivos neologic'>
 <div className='flex w-full text-black'>
@@ -597,5 +601,6 @@ export default function IdPcGamer(){
 	</div>
 </Section.Root>
     </div>
+	</>
   )
 }

@@ -1,15 +1,27 @@
-import React from 'react';
-import { Shopinfo } from "../../components";
+import React,{useState, useEffect} from 'react';
 import { Banner, Categories,Footer,Header,Hr,InterTripleNavigation, PublicityCard, PublicityLabel, Section, Settings } from "../../components/_ui";
-// import { ArrowRight } from "phosphor-react";
 import { BsFire } from "react-icons/bs";
 import { categories } from "../api/data"
 import { Card } from '@/cards';
-import {inform} from '@/pages/api/data'
+import { LateralMenuComplit } from '@/cards/LateralMenuComplit';
+import { useProductsContext } from '@/context/ProdutsContext/ProductContext';
+import { Products } from "@/Types/GloballTypes";
 
-// import { Container } from './styles';
+ const Page:React.FC=()=>{
 
-const Hardware =() => {
+  const valeuSearchFilter = (value: string) => {
+    setFilterProduct(value)
+  };
+  const AllProducts =useProductsContext()
+  const [products, setProducts] = useState<Products[]|undefined>(AllProducts?.products)
+  const [filterProduct, setFilterProduct] = useState<string>('');
+  const [Types, setTypes] = useState<Products[]>()
+  
+  useEffect(() => {
+    if(filterProduct=="") setTypes(products?.filter((i)=>i.tipo==="mouse"))
+    else setTypes(products?.filter((i)=>i.marca.toLowerCase().startsWith(filterProduct.toLocaleLowerCase())&& i.tipo=="mouse"))
+  },[filterProduct]); 
+  
   return (
     <> 
     <Header />
@@ -62,32 +74,18 @@ const Hardware =() => {
            </div>
       </div>
 </div>
-     
+      
 <main className='flex w-[100%] mt-[10px]'>
-
-
 <div className='w-[20%]'>
- 
- <Card.CardFiltro label='Produto'
-    
-    options={
-      inform.map((i)=>
-      (<Card.CheckListCard item={i.toString()} />))
-    }
-    
-    />
- 
+<LateralMenuComplit searchPC={false} onInputvalue={valeuSearchFilter} />
 </div>
-
-
+ 
 <div className='w-[80%] flex flex-col'>
 <div className='w-[100%] p-2 grid grid-cols-4 gap-4'>
 {
-    inform.map((i)=>
-    (<Card.NormalCard  />))
-}
-    
-    
+   Types?.map((i)=>
+    (<Card.NormalCard key={i.id} imglLink={i.img} id={i.id.toString()} name={i.name} price={i.price} desconto={i.desconto}  />))
+}       
 </div>
 <div className='w-[100%] flex items-center justify-center mt-[20px] h-[300px]'>
        <PublicityLabel.Root expires={true}>
@@ -96,12 +94,12 @@ const Hardware =() => {
       </PublicityLabel.Root>
 </div>
 </div>
-
 </main>
+
   </div> 
 
     </div>
  </> )
 }
 
-export default Hardware;
+export default Page;

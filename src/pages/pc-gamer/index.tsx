@@ -1,51 +1,29 @@
 import React,{useState, useEffect} from 'react';
-import { Shopinfo } from "../../components";
-import { Banner, Categories,Footer,Header,Hr,InterTripleNavigation, PublicityCard, PublicityLabel, Section, Settings } from "../../components/_ui";
+import { Banner, Categories,Footer,Header,Hr,InterTripleNavigation, PublicityCard, PublicityLabel, Section, Settings } from "@/components/_ui";
 import { categories } from '@/pages/api/data';
 import { BsFire } from "react-icons/bs";
 import { Card } from '@/cards';
-import {product} from '@/pages/api/data'
-import {marca} from '@/pages/api/data'
-
+import { LateralMenuComplit } from '@/cards/LateralMenuComplit';
+import { useProductsContext } from '@/context/ProdutsContext/ProductContext';
+import { Products } from "@/Types/GloballTypes";
 
 export const metadata = {
   title: 'PC Gamer'
 }
-export default function PcGamer(){
-  let divisao:string[];
-  let divisaoV2:string[];
 
-  const [filterProduct, setFilterProduct] = useState('');
-  const [filterlateralMenu, setFilterLateralMenu] = useState('');
-  const [Types, setTypes] = useState<any>([])
-  const [itemsMenu, setItemsMenu] = useState<any>([])
-  const [products, setProducts] = useState<product>(()=>{
-    return product
- })
- const [itemsLateraMenu,setItemsLateralMenu] = useState<marca>(()=>{
-  return marca
-})
+const Page:React.FC=()=>{
 
-const valueSearcCheckBox = (value: string) => {
-  setFilterProduct(value);
+const valeuSearchFilter = (value: string) => {
+  setFilterProduct(value)
 };
-const valeuSearchLateralList = (value: string) => {
-  setFilterLateralMenu(value);
-};
+const AllProducts =useProductsContext()
+const [products, setProducts] = useState<Products[]|undefined>(AllProducts?.products)
+const [filterProduct, setFilterProduct] = useState<string>('');
+const [Types, setTypes] = useState<Products[]>()
 
 useEffect(() => {
-  if(filterlateralMenu=="")
-  setItemsMenu(itemsLateraMenu)
-  else
-  setItemsMenu(itemsLateraMenu.filter((i)=>i.toLowerCase().startsWith(filterlateralMenu.toLocaleLowerCase())))
-},[filterlateralMenu]); 
-
-
-useEffect(() => {
-  if(filterProduct=="")
- setTypes(products.filter((i)=>i.tipo==='pc-gamer'))
-  else
- setTypes(products.filter((i)=>i.marca===filterProduct))
+  if(filterProduct=="") setTypes(products?.filter((i)=>i.tipo==="pc-gamer"))
+  else setTypes(products?.filter((i)=>i.marca.toLowerCase().startsWith(filterProduct.toLocaleLowerCase())&& i.tipo=="pc-gamer"))
 },[filterProduct]); 
 
   return (
@@ -98,19 +76,13 @@ useEffect(() => {
 <main className='flex w-[100%] mt-[10px]'>
 
 <div className='w-[20%]'>
- 
- <Card.CardFiltro label='marca' onInputvalue={valeuSearchLateralList}
-    options={
-      itemsMenu.map((i)=>
-      (<Card.CheckListCard onInputvalue={valueSearcCheckBox} item={i.toString()} />))
-    }
-    />
+    <LateralMenuComplit onInputvalue={valeuSearchFilter}/>
 </div>
 
 <div className='w-[80%] flex flex-col'>
 <div className='w-[100%] p-2 grid grid-cols-4 gap-4'>
 {
-    Types.map((i)=>
+    Types?.map((i)=>
     (<Card.SuperCard key={i.id} imgLink={i.img} id={i.id.toString()} name={i.name} price={i.price} desconto={i.desconto}  />))
 }
     
@@ -129,3 +101,4 @@ useEffect(() => {
       </div>
 </>  )
 }
+export default Page

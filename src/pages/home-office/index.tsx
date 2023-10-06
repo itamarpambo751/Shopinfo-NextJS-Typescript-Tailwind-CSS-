@@ -5,26 +5,25 @@ import { categories } from '@/pages/api/data';
 import { BsFire } from "react-icons/bs";
 import { Card } from '@/cards';
 import {inform} from '@/pages/api/data'
-import {product} from '@/pages/api/data'
-import {marca} from '@/pages/api/data'
-// import { Container } from './styles';
+import { LateralMenuComplit } from '@/cards/LateralMenuComplit';
+import { useProductsContext } from '@/context/ProdutsContext/ProductContext';
+import { Products } from "@/Types/GloballTypes";
 
+ const Page:React.FC=()=>{
 
-
-export default function WorkStation(){
-
-    const [Types, setTypes] = useState<any>([])
-    const [products, setProducts] = useState<product>(()=>{
-      return product
-   })
-
-useEffect(() => {
-
-   setTypes(products.filter((i)=>i.tipo==='acessorio'))
-   
-  },[products]); 
+  const valeuSearchFilter = (value: string) => {
+    setFilterProduct(value)
+  };
+  const AllProducts =useProductsContext()
+  const [products, setProducts] = useState<Products[]|undefined>(AllProducts?.products)
+  const [filterProduct, setFilterProduct] = useState<string>('');
+  const [Types, setTypes] = useState<Products[]>()
   
-
+  useEffect(() => {
+    if(filterProduct=="") setTypes(products?.filter((i)=>i.tipo==="mouse"))
+    else setTypes(products?.filter((i)=>i.marca.toLowerCase().startsWith(filterProduct.toLocaleLowerCase())&& i.tipo=="mouse"))
+  },[filterProduct]); 
+  
   return (
     <> 
     <Header />
@@ -66,36 +65,16 @@ useEffect(() => {
            </div>
       </div>
 </div>
-     
 <main className='flex justify-between w-[100%] mt-[10px]'>
-
-
-<div className='w-[18%]'>
- 
-
-
- <Card.CardFiltro label='marcas'
-    
-    options={
-      marca.map((i)=>
-      (<Card.CheckListCard  item={i.toString()} />))
-    }
-    
-    />
- 
-
+<div className='w-[20%]'>
+<LateralMenuComplit searchPC={false} onInputvalue={valeuSearchFilter} />
 </div>
-
-
 <div className='w-[80%] flex flex-col'>
 <div className='w-[100%] p-2 grid grid-cols-4 gap-4'>
 {
-    Types.map((i)=>
+    Types?.map((i)=>
     (<Card.NormalCard key={i.id} imglLink={i.img} id={i.id.toString()} name={i.name} price={i.price} desconto={i.desconto}  />))
-}
-    
-
-    
+}   
 </div>
 <div className='w-[100%] flex items-center justify-center mt-[20px] h-[300px]'>
        <PublicityLabel.Root expires={true}>
@@ -103,9 +82,10 @@ useEffect(() => {
       </PublicityLabel.Root>
 </div>
 </div>
-
 </main>
  </div>
    </div>
  </> )
 }
+
+export default Page
