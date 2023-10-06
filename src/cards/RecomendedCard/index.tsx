@@ -35,14 +35,14 @@ interface RecomendedCardProps {
              <PublicityCard.Content.Price resize={true} price="1.239,90" oldPrice="2.014,20" color/>
              <div className='w-[100%] flex items-center justify-around'>
           <div className='relative w-full flex items center- justify-center'>
-          <Hr className='border-[black] mt-3 border-[1px] w-[100%] z-2' />
-          <div className='z-4 flex absolute bg-[#111] items-center justify-center'>
+          <Hr className='border-[var(--shadow-color)] mt-3 border-[1px] w-[100%] z-2' />
+          <div className='z-4 flex absolute bg-[var(--background-color)] items-center justify-center'>
           <PublicityCard.Content.Stars value={4} left/>
           </div></div>
 			 </div>
 			  
 
-			  <h1 className='text-[#00a74c] font-bold text-[12px] mt-[4px]'>Radeon Vega 7 Integrado</h1>
+			  <h1 className='text-[var(--first-color)] font-bold text-[12px] mt-[8px]'>Radeon Vega 7 Integrado</h1>
 			  <div className='flex'>
 				<div className='flex'>
 					<img src='../assets/icons/processor.png' className='w-[20px] h-[15px]' />

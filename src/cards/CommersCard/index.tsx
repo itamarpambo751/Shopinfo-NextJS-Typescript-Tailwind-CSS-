@@ -31,7 +31,7 @@ interface CommersCardProps {
              <PublicityCard.Content.Price resize={true} price="1.239,90" oldPrice="2.014,20" color/>
            </PublicityCard.Content.Root>
           <div className='relative w-full flex items center- justify-center'>
-           <Hr className='border-[black] mt-3 border-[1px] w-[100%] z-2' />
+           <Hr className='border-[--shadow-color] mt-3 border-[1px] w-[100%] z-2' />
           <div className='z-4 flex absolute bg-[#111] items-center justify-center'>
           <PublicityCard.Content.Stars value={4} left/>
           </div>
@@ -39,9 +39,9 @@ interface CommersCardProps {
           </div> 
            <div className="w-[100%] mt-2">
             <div>
-            <PublicityLabel.Content  bigText="ksidj jw9ejfw iowj9efw je9r iejirg +"/>
+            <PublicityLabel.Content small={true} bigText="ksidj jw9ejfw iowj9efw je9r iejirg +"/>
             </div>
-            <div className='w-full'>
+            <div className='w-full mt-[8px]'>
               <PublicityLabel.Root expires={true}>
                <PublicityLabel.Content  bigText="COMPRAR JUNTO"/>
              </PublicityLabel.Root>
