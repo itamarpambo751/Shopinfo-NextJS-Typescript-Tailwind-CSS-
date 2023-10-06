@@ -29,7 +29,7 @@
     @apply text-[var(--text-colo-initial)];
     @apply bg-[var(--background-color)];
   }
-  input {
+  input,textarea {
     @apply text-[14px] transition-shadow duration-150 border-[.1rem] border-[#a3a3a3]
     placeholder:text-[var(--border-color)] py-[.45rem] px-5 outline-none
     bg-[#f6f7f8] rounded-[.3rem]
@@ -49,6 +49,9 @@
     @apply text-[#464646ab];
   }
   input:focus {
+    @apply border-[--first-color] shadow-[0px_0px_1px_1px_--first-color];
+  }
+  textarea:focus {
     @apply border-[--first-color] shadow-[0px_0px_1px_1px_--first-color];
   }
   .efect-hover  {
