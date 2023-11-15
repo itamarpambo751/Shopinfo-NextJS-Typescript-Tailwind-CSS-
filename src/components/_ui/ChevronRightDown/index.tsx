@@ -46,7 +46,7 @@ export const ChevronRightDown: React.FC<ChevronRightDownProps> = ({
                         </i>
                     </form>
                     <ul className="w-full flex flex-col bg-[#181818]">
-                        {item.items.map(sub => <ChevronChecks span={sub}/>)}
+                        {item.items.map((sub, i) => <ChevronChecks span={sub} key={i}/>)}
                     </ul>
                 </>
             )}

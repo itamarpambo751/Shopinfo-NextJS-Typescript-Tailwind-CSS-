@@ -42,7 +42,7 @@ export const Avaliations: React.FC = () => {
 							<div className='h-26'>
 								<div className='flex justify-start items-center gap-1 mb-2'>
 									<span className='flex justify-center items-start gap-1'>
-                                        {[1, 2, 3, 4, 5].map(() => <Star />)}
+                                        {[1, 2, 3, 4, 5].map((s, i) => <Star key={i}/>)}
 									</span>
 								    <span className='text-[13px]'>(234)</span>
 								</div>
@@ -65,7 +65,7 @@ export const Avaliations: React.FC = () => {
 									Superou as expectivas, processador bruto, para jogos que exigem muito do processador, vega7 superou... <button className='uppercase font-bold text-[var(--red-text-color)] mb-5'>Leia+</button>
 
                                     <span className='flex justify-start items-center gap-[.1rem]'>
-                                        {[1, 2, 3, 4, 5].map(() => <Star />)}
+                                        {[1, 2, 3, 4, 5].map((s, i) => <Star key={i}/>)}
                                     </span>
 							    </p>
 								<span className='absolute -bottom-4 right-2 text-5xl font-extrabold'>&quot;</span>

@@ -56,8 +56,8 @@ export default function page() {
 					<Hr className='w-1/12 border-[var(--red-color)]'/>
 				</div>
 				<div className="flex justify-between items-center m-auto mt-10 mb-20">
-					{[1, 2, 3, 4, 5].map(() => (
-						<PublicityCardV2 />
+					{[1, 2, 3, 4, 5].map((n, i) => (
+						<PublicityCardV2 key={i}/>
 					))}
 				</div>
 			</Section.Content>
@@ -74,8 +74,8 @@ export default function page() {
 				</div>
 			</Section.Content>
 			<div className="flex gap-5 items-center m-auto mt-10 mb-20 w-[80%] box-border">
-				{[1, 2, 3, 4, 5 ].map(() => (
-					<PublicityCardV3 />
+				{[1, 2, 3, 4, 5 ].map((n, i) => (
+					<PublicityCardV3 key={i}/>
 				))}
 			</div>
 			<Section.Content>
@@ -86,13 +86,23 @@ export default function page() {
 					<Categories categories={spreed_categories} />
 				</div>
 			</Section.Content>
-			<img src="../assets/img/exclusivo-neologic-banner-topo.webp"/>
+			<Image 
+				src="/assets/img/exclusivo-neologic-banner-topo.webp"
+				alt='banner'
+				width={1920}
+				height={1000}
+			/>
 			<div className='text-center flex flex-col justify-start items-center mt-10'>
 				<h2 className='text-3xl font-bold mb-5'>Busque a vitória</h2>
 				<p className='w-1/2 font-bold text-xl'>
 					Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quasi similique, alias adipisci ex tempora ipsum debitis aut sunt doloremque obcaecati saepe at animi accusantium commodi id laudantium beatae dolore modi! Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt aliquid laborum porro ea alias odio, cum, veritatis natus eum esse iusto consectetur voluptatibus quaerat quia molestias adipisci sequi facilis velit.
 				</p>
-				<img src="../assets/img/esport-box-maquinas.png"/>
+				<Image 
+					src="../assets/img/esport-box-maquinas.png"
+					alt='esport'
+					width={666}
+					height={1000}
+				/>
 				<div className='flex justify-center mb-24 items-start gap-16 mt-[-70px]'>
 					<figure className='flex flex-col gap-4 justify-center items-center'>
 						<Image src="/assets/img/footer1.png" alt="image" height={150} width={150}/>
