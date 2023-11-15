@@ -14,7 +14,7 @@ const PublicityCardContentContainer: React.FC<PublicityCardContentProps> = ({
 
   return (
     <PublicityCardContentContext.Provider value={PublicityCardContextProps}>
-      <div className="text-start w-full h-[100%] flex flex-col justify-between">
+      <div className="text-start w-full h-[100%] flex flex-col justify-between box-border">
           {children}
       </div>
     </PublicityCardContentContext.Provider>

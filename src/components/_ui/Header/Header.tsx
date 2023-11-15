@@ -1,40 +1,65 @@
 import React from 'react'
 import { Heart, List, MagnifyingGlass, Truck } from 'phosphor-react'
-import { BsCart2, BsHeart } from 'react-icons/bs'
-import { CiUser } from 'react-icons/ci'
 import { Section } from '..'
 import Link from 'next/link'
+import { HeaderListLinkList } from './HeaderListLinkList'
+import { UserLoggedHeader } from './UserLoggedHeader'
+import Image from 'next/image'
+
+
+const links = [
+  {
+    'url':'/pc-gamer',
+    'link':'PC Gamer'
+  },
+  {
+    'url':'/home-office',
+    'link':'Home Office'
+  },
+  {
+    'url':'/workstation',
+    'link':'Workstation'
+  },
+  {
+    'url':'/periferics',
+    'link':'Periferics'
+  },
+  {
+    'url':'/hardware',
+    'link':'Hardware'
+  }
+]
 
 const Header:React.FC = () => {
   return (
-    <header className="w-[100%] bg-black sticky top-[-60px] z-[999]">
+    <header className="w-[100%] bg-black sticky top-[-60px] z-[999] header-box-shadow">
       <div className="w-[100%] h-[60px] flex items-center justify-center bg-[#FE093C]">
-        <img src="./assets/img/header.webp" className='object-cover'/>
+        <Image 
+          src="/assets/img/header.webp" 
+          className='object-cover'
+          height={1000}
+          width={1000}
+          alt='logo'
+        />
       </div>
       <Section.Content>
         <div className="h-[100px] flex justify-between items-center gap-12 m-auto">
           <section className='flex gap-10'>
             <Link href='/'>
-              <img src="./assets/img/logo1.png" alt="logo" className='pb-1'/>
+              <Image 
+                src="/assets/img/logo1.png" 
+                alt="logo" 
+                className='pb-1'
+                width={170}
+                height={170}
+              />
             </Link>
             <div className="flex-1 flex justify-center items-center gap-3">
               <div className="flex items-center gap-6 relative">
                 <ul className="flex justify-center items-end pt-1 gap-3 relative">
-                  <li className="header-list-link">
-                    <Link href="/pc-gamer">PC Gamer</Link>
-                  </li>
-                  <li className="header-list-link">
-                    <Link href="/home-office">Home Office</Link>
-                  </li>
-                  <li className="header-list-link">
-                    <Link href="/workstation">Workstation</Link>
-                  </li>
-                  <li className="header-list-link">
-                    <Link href="/periferics">Periferics</Link>
-                  </li>
-                  <li className="header-list-link">
-                    <Link href="/hardware">Hardware</Link>
-                  </li>
+                  {links.map((item, i) => (
+                    <HeaderListLinkList link={item} key={i}/>
+                  ))}                  
                 </ul>
                 <div className='flex justify-normal items-center gap-2'>
                   <input
@@ -49,37 +74,7 @@ const Header:React.FC = () => {
                     </button>
                 </div>
               </div>
-              <ul className="flex gap-2  pl-3 border-l-2 border-[var(--border-color)]">
-                <li className='flex justify-center items-end gap-1'>
-                  <i className='text-[1.6rem] text-[var(--red-color)]'>
-                    <Truck/>
-                  </i>
-                  <span className='text-[.9rem]'>
-                    Rastreio
-                  </span>
-                </li>
-                <li className='flex justify-center items-end gap-1'>
-                  <i className='text-[1.6rem] text-[var(--red-color)]'>
-                    <CiUser/>
-                  </i>
-                  <span className='text-[.9rem]'>
-                    Minha conta
-                  </span>
-                </li>
-                <li className='flex justify-center items-end gap-1'>
-                  <i className='text-[1.6rem] text-[var(--red-color)]'>
-                    <BsCart2/>
-                  </i>
-                  <span className='text-[.9rem]'>
-                    Carrinho
-                  </span>
-                </li>
-								<li className='flex justify-center items-end'>
-									<i className='text-[1.5rem] text-[var(--red-color)]'>
-                    <Heart/>
-                  </i>
-								</li>
-              </ul>
+              <UserLoggedHeader />
             </div>
           </section>
         </div>

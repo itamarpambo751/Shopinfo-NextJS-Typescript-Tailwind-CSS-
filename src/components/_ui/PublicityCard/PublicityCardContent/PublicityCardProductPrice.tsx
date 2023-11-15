@@ -14,16 +14,16 @@ const PublicityCardProductPrice: React.FC<PublicityCardProductPriceProps> = ({
 
   return (
     <div
-			data-extra={extra} className="flex flex-col -space-y-1 data-[extra=true]:-space-y-4">
+			data-extra={extra} className="flex flex-col -space-y-1 data-[extra=true]:space-y-[-3px] ">
       {oldPrice && <small data-extra={extra} className="text-gray-500 data-[extra=true]:text-[1.1rem] font-light">DE: R$ {oldPrice}</small>}
         <label>
             <span data-resize={resize} data-extra={extra} data-color={color} className="text-[1.8rem] text-[var(--red-text-color)] data-[resize=true]:text-[1.2rem] data-[resize=undefined]:data-[extra=true]:text-[2.7rem] data-[color=true]:text-[var(--green-color)] font-bold">
                 R$ { price }
             </span>
-            {!extra && <small className='text-[.77rem] text-white'> no pix</small>}
+            {!extra && <small className='text-[.77rem]'> no pix</small>}
         </label>
 				{!extra && (
-					<small className={`block text-white text-[.77rem]`}>
+					<small className={`block text-[.77rem]`}>
 						10x R$ 255,67 sem juros
 					</small>
 				) }

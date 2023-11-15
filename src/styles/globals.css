@@ -24,7 +24,7 @@
     @apply text-white;
     @apply bg-[var(--background-color)];
   }
-  input {
+  input, textarea {
     @apply text-[14px] transition-shadow duration-150 border-[.1rem] border-[var(--border-color)]
     placeholder:text-[var(--border-color)] py-[.45rem] px-5 outline-none
     bg-[var(--background-color)] rounded-[.3rem]
@@ -60,7 +60,9 @@
 	}
 }
 
-
+.times-new {
+  font-family: 'Times New Roman', Times, serif;
+}
 .link-border-red::before {
 	content: '';
 	position: absolute;
@@ -142,4 +144,10 @@
 	bottom: -10px;
 	background: var(--red-text-color);
 	border-radius: 0 0 15px 15px;
+}
+
+
+
+.borda-de-texte {
+  border: 2px solid red;
 }

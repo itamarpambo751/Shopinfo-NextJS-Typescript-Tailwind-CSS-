@@ -10,7 +10,8 @@ export default function Document() {
         <Header />
         <Main />
         <NextScript />
-       {/*  <Footer /> */}
+        <BuyWith />
+        <Footer />
       </body>
     </Html>
   )

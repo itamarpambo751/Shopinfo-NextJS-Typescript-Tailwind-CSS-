@@ -9,7 +9,7 @@ const PublicityLabelIcon: React.FC<PublicityLabelIconProps> = ({
     icon: Icon
  }: PublicityLabelIconProps) => {
   return (
-    <i className="text-2xl">
+    <i className="text-2xl text-white">
         <Icon/>
     </i>
   )

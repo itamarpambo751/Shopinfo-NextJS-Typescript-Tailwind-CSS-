@@ -9,7 +9,7 @@ const SectionContainer: React.FC<SectionContainerProps> = ({
     children
 }: SectionContainerProps) => {
   return (
-    <section className='mt-[5rem] relative'>
+    <section className='mt-[5rem] relative m-auto'>
         { children }
     </section>
   )

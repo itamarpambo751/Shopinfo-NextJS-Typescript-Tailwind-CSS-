@@ -24,7 +24,7 @@ const PublicityCardRoot: React.FC<PublicityCardRootProps> = ({
 					data-hover={!effect}
 					data-transparent={!transparent}
 					data-resize={resize}
-					className={`grid data-[resize=false]:grid-cols-2 data-[hover=true]:effect-hover p-5 data-[transparent=true]:bg-[#1e1e1e81] rounded-md data-[resize=true]:grid-row-2 ${className}`}
+					className={`data-[transparent=true]:bg-[#1e1e1e81] grid data-[resize=false]:grid-cols-2 data-[hover=true]:effect-hover rounded-md data-[resize=true]:grid-row-2 ${className} flex flex-col justify-center items-end pb-card-before`}
 				>
           {children}
         </div>
@@ -34,3 +34,5 @@ const PublicityCardRoot: React.FC<PublicityCardRootProps> = ({
 }
 
 export default PublicityCardRoot;
+
+//

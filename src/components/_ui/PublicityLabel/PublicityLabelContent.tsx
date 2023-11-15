@@ -12,7 +12,7 @@ const PublicityLabelContent: React.FC<PublicityLabelContentProps> = ({
     smallText, bigText, bold, small, extrabold
 }: PublicityLabelContentProps) => {
   return (
-    <span className="flex flex-col text-[.8rem] text-center">
+    <span className="flex flex-col text-[.8rem] text-center text-white">
         { smallText && (
             <p>{ smallText }</p>
         )}
