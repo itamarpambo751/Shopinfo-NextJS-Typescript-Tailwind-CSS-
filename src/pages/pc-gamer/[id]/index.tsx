@@ -98,7 +98,7 @@ export default function page() {
 					Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quasi similique, alias adipisci ex tempora ipsum debitis aut sunt doloremque obcaecati saepe at animi accusantium commodi id laudantium beatae dolore modi! Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt aliquid laborum porro ea alias odio, cum, veritatis natus eum esse iusto consectetur voluptatibus quaerat quia molestias adipisci sequi facilis velit.
 				</p>
 				<Image 
-					src="../assets/img/esport-box-maquinas.png"
+					src="/assets/img/esport-box-maquinas.png"
 					alt='esport'
 					width={666}
 					height={1000}
