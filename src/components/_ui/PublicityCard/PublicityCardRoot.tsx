@@ -19,7 +19,7 @@ const PublicityCardRoot: React.FC<PublicityCardRootProps> = ({
 
   return (
     <PublicityCardRootContext.Provider value={contextProvider}>
-      <Link href={"pc-gamer/"+id}>
+      {/* <Link href={"pc-gamer/"+id}> */}
         <div
 					data-hover={!effect}
 					data-transparent={!transparent}
@@ -28,7 +28,7 @@ const PublicityCardRoot: React.FC<PublicityCardRootProps> = ({
 				>
           {children}
         </div>
-      </Link>
+      {/* </Link> */}
     </PublicityCardRootContext.Provider>
   )
 }
