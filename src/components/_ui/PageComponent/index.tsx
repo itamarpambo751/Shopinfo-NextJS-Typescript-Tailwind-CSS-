@@ -2,8 +2,8 @@ import { Banner, Categories, Hr, Section, Settings } from '@/components/_ui';
 import React from 'react';
 import { ChevronRightDown } from '@/components/_ui/ChevronRightDown';
 import { BsChevronDown } from 'react-icons/bs';
-import { PublicityCardV2 } from '@/components/_ui/PublicityCard/v2';
 import { categories } from '@/pages/api/data';
+import { PublicityCardV6 } from '../PublicityCard/v6';
 
 const listDown = [
   {
@@ -130,13 +130,15 @@ export default function PageComponent()  {
                 <div className="min-w-[230px] max-w-[230px]">                    
                   <div  className="b-top">
                     <ul>
-                      {listDown.map((item, index) => <ChevronRightDown item={item} key={index}/>)}
+                      {listDown.map((item, index) => 
+                        <ChevronRightDown item={item} key={index}/>
+                      )}
                     </ul>
                   </div>
                 </div>
                 <div>
                   <ul className='flex-1 grid grid-cols-4 gap-7'>
-                    {[1, 2, 3,4, 5, 6, 7,8,9,2,2,2,2,2].map((n, i) => <PublicityCardV2 key={i}/>)}
+                    {[1, 2, 3, 4, 5, 6, 7, 8, 9, 2, 2, 2, 2, 2].map((n, i) => <PublicityCardV6 key={i}/>)}
                   </ul>
                   <div className='mt-20 flex justify-center items-center'>
                     <button className='bg-[var(--red-text-color)] w-96 font-bold text-[1rem] p-2 rounded-md'>Carregar mais produtos</button>
@@ -146,9 +148,7 @@ export default function PageComponent()  {
             </div>
           </Section.Content>
         </div>
-
       </Section.Root>
-
       <section className='h-[1000px]'></section>
     </div>
   )

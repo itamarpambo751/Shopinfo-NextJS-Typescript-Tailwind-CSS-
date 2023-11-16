@@ -36,15 +36,17 @@ export const ChevronRightDown: React.FC<ChevronRightDownProps> = ({
             </div>
             {!chevronRight && (
                 <>
-                    <form className="flex justify-between items-center gap-1 px-3 pb-4 w-full">
-                        <input type="text" placeholder="Procure por nome ou descrição" 
-                        className="text-sm text-[12.5px] transition-shadow duration-150 border-[.1rem] border-[var(--border-color)]
-                        placeholder:text-[var(--border-color)] py-[.45rem] px-1 outline-none h-[25px]
-                        bg-[var(--background-color)] rounded-[.4rem]"/>
-                        <i className="text-[var(--text-light)] text-[1rem]">
-                            <BsSearch />
-                        </i>
-                    </form>
+                    {item.items.length > 5 && (
+                        <form className="flex justify-between items-center gap-3 px-3 pb-4 w-full">
+                            <input type="text" placeholder="Procure por nome ou descrição" 
+                            className="flex-1 text-sm text-[12.5px] transition-shadow duration-150 border-[.1rem] border-[var(--border-color)]
+                            placeholder:text-[var(--border-color)] py-[.45rem] px-1 outline-none h-[25px]
+                            bg-[var(--background-color)] rounded-[.4rem]"/>
+                            <i className="text-[var(--text-light)] text-[1rem]">
+                                <BsSearch />
+                            </i>
+                        </form>
+                    )}
                     <ul className="w-full flex flex-col bg-[#181818]">
                         {item.items.map((sub, i) => <ChevronChecks span={sub} key={i}/>)}
                     </ul>

@@ -1,4 +1,7 @@
+import { BsAlarm } from "react-icons/bs";
 import PublicityCard from "..";
+import { PublicityLabel } from "../..";
+import { Truck } from "phosphor-react";
 
 const settings = [
     { imgUrl: './assets/icons/processor.png', setting:'Ryzen 5 5600G' },
@@ -7,6 +10,18 @@ const settings = [
 ]
 export const PublicityCardV4: React.FC = () =>
 <PublicityCard.Root id='2' resize className="p-5">
+    <div className="w-[200px] flex gap-2">
+        <PublicityLabel.Root free>
+            <PublicityLabel.Icon icon={Truck}/>
+        </PublicityLabel.Root>
+        <PublicityLabel.Root>
+           {/*  <PublicityLabel.Icon icon={BsAlarm}/> */}
+                    <PublicityLabel.Content
+                    bigText="-17%"
+                    /* smallText="Ofertas expiram em" */
+                    />
+        </PublicityLabel.Root>
+    </div>
     <PublicityCard.Image url="./assets/img/1(5).png"/>
     <PublicityCard.Content.Root>
         <div className="mt-10 space-y-3 relative">
