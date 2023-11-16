@@ -92,7 +92,7 @@ export default function PageComponent()  {
   return (
     <div>
       <Banner.Gradient.Root>
-				<Banner.Image url="./assets/img/choosepc-gmer.webp"/>
+				<Banner.Image url="/assets/img/choosepc-gmer.webp"/>
 				<div className='absolute top-0 left-10 m-auto'>
 					<Banner.Gradient.Container section='Home > Computadores Gamer'>
 						<Banner.Gradient.Content
