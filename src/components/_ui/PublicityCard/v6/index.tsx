@@ -5,13 +5,17 @@ import { BsHeart } from "react-icons/bs"
 
 export const PublicityCardV6: React.FC = () => {
     return(
-        <PublicityCard.Root className='px-7 pt-3 w-[230px] bg-[#dadada0d]' id="1" resize transparent>
-                <div className="flex justify-between items-center z-[1000]">
-                    <PublicityLabel.Root>
-                        <PublicityLabel.Content bigText="-18%"/>
-                    </PublicityLabel.Root>
-                    <PublicityLabel.Icon icon={BsHeart}/>
-                </div>
+        <PublicityCard.Root 
+            className='px-7 pt-3 w-[230px] bg-[#dadada0d]' 
+            id="1" resize transparent
+            useLinkJustOnCardBody
+        >
+            <div className="flex justify-between items-center z-[1000]">
+                <PublicityLabel.Root>
+                    <PublicityLabel.Content bigText="-18%"/>
+                </PublicityLabel.Root>
+                <PublicityLabel.Icon icon={BsHeart}/>
+            </div>
             <Link href={'/pc-gamer/'+1} className="z-0">
                 <div className='mt-[-30px]'>
                     <PublicityCard.Image url="../assets/img/1(7).png"/>
