@@ -31,8 +31,12 @@ export const Specifications: React.FC = () => {
 									className='px-5 py-[.5rem] w-full data-[mod=true]:bg-[#1a1a1a]'
 									style={{display: 'grid', gridTemplateColumns: '35% auto'}}
 								>
-									<span className='text-[var(--border-color)] text-left'>{setting.settingName}</span>
-									<span className='text-left'>{setting.settingDescription}</span>
+									<span className='text-[var(--border-color)] text-left'>
+										{setting.settingName}
+									</span>
+									<span className='text-left'>
+										{setting.settingDescription}
+									</span>
 								</li>
 							))}
 							<br />
