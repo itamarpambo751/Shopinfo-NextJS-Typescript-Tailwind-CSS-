@@ -13,7 +13,7 @@ export const BuyTogether: React.FC = () => {
 							noHoverEffect
 							transparent
 						>
-							<PublicityCard.Image url='../assets/img/1(9).png'/>
+							<PublicityCard.Image url='/assets/img/1(9).png'/>
 							<PublicityCard.Content.Root>
 								<div className='w-full h-full flex items-center justify-normal'>
 									<PublicityCard.Content.Product
@@ -35,7 +35,7 @@ export const BuyTogether: React.FC = () => {
 							noHoverEffect
 							transparent
 						>
-							<PublicityCard.Image url='../assets/img/1 (1).png'/>
+							<PublicityCard.Image url='/assets/img/1 (1).png'/>
 							<PublicityCard.Content.Root>
 								<PublicityCard.Content.Product
 									name='Kit Gamer Evolut 4x1 Eg-54 Teclado Abnt2 Led Rainbow + Mouse Usb 1600dpi + Headset Conexão P2 +...'
