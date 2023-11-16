@@ -6,6 +6,7 @@ import { Caret } from '@/components/_ui/Caret';
 import { imageUrls } from '@/pages/api/data';
 import ComputerImageList from './ComputerImageList';
 import ComputerDescription from './ComputerDescription';
+import { IconButtonAddOnFavorites } from '@/components/_ui/ButtonAddOnFavorites';
 
 interface ImagesType {
 	url: string
@@ -27,7 +28,10 @@ const RootingComputer: React.FC = () => {
 							| <span className='uppercase text-green-500 text-sm'>Neologic</span> |
 							<span className='flex justify-start items-center gap-5'>
 								<i className='text-[1.8rem]'><BsShare /></i>
-								<i className='text-[1.8rem]'><Heart /></i>
+
+								<button className='text-[1.8rem]'>
+									<IconButtonAddOnFavorites id='1'/>
+								</button>
 							</span>
 						</div>
 						<div className='grid-reverse-cols w-full h-full'>
