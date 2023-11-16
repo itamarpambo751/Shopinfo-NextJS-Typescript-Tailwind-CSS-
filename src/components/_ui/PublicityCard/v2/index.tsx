@@ -11,7 +11,7 @@ export const PublicityCardV2: React.FC = () => {
                 </PublicityLabel.Root>
             </div>
             <div className='mt-[-30px]'>
-                <PublicityCard.Image url="../assets/img/1(7).png"/>
+                <PublicityCard.Image url="/assets/img/1(7).png"/>
             </div>
             <PublicityCard.Content.Root>
                 <div className="scale-95">
