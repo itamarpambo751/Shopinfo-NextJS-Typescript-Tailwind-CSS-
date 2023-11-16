@@ -1,8 +1,7 @@
 import Link from "next/link"
 import PublicityCard from ".."
 import { Hr, PublicityLabel } from "../.."
-import { BsHeart } from "react-icons/bs"
-import { productsMethods } from "@/pages/api/products/_controller"
+import { IconButtonAddOnFavorites } from "../../ButtonAddOnFavorites"
 
 export const PublicityCardV6: React.FC = () => {
     return(
@@ -11,15 +10,11 @@ export const PublicityCardV6: React.FC = () => {
             id="1" resize transparent
             useLinkJustOnCardBody
         >
-            <div className="flex justify-between items-center z-[1000]">
+            <div className="flex justify-between items-center z-[999]">
                 <PublicityLabel.Root>
                     <PublicityLabel.Content bigText="-18%"/>
                 </PublicityLabel.Root>
-                <PublicityLabel.Icon 
-                    id="1"
-                    icon={BsHeart} 
-                    handleClick={productsMethods.addOnFavorites}
-                />
+                <IconButtonAddOnFavorites id="1"/>
             </div>
             <Link href={'/pc-gamer/'+1} className="z-0">
                 <div className='mt-[-30px]'>

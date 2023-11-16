@@ -32,7 +32,7 @@ const links = [
 
 const Header:React.FC = () => {
   return (
-    <header className="w-[100%] bg-black sticky top-[-60px] z-[999] header-box-shadow">
+    <header className="w-[100%] bg-black sticky top-[-60px] z-[1000] header-box-shadow">
       <div className="w-[100%] h-[60px] flex items-center justify-center bg-[#FE093C]">
         <Image 
           src="/assets/img/header.webp" 
