@@ -1,15 +1,17 @@
-import React, { ElementType } from 'react';
+import React, { ElementType, MouseEventHandler } from 'react';
 
 // import { Container } from './styles';
 interface PublicityLabelIconProps {
     icon: ElementType
+    handleClick?: Function
 }
 
 const PublicityLabelIcon: React.FC<PublicityLabelIconProps> = ({ 
-    icon: Icon
+    icon: Icon, handleClick
  }: PublicityLabelIconProps) => {
+
   return (
-    <i className="text-2xl text-white">
+    <i onClick={handleClick ? () => handleClick():function () {}} className="text-2xl text-white">
         <Icon/>
     </i>
   )

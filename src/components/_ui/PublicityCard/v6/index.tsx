@@ -4,6 +4,11 @@ import { Hr, PublicityLabel } from "../.."
 import { BsHeart } from "react-icons/bs"
 
 export const PublicityCardV6: React.FC = () => {
+
+    const addOnFavorite = () => {
+        alert("Add on favorites")
+    }
+
     return(
         <PublicityCard.Root 
             className='px-7 pt-3 w-[230px] bg-[#dadada0d]' 
@@ -14,7 +19,7 @@ export const PublicityCardV6: React.FC = () => {
                 <PublicityLabel.Root>
                     <PublicityLabel.Content bigText="-18%"/>
                 </PublicityLabel.Root>
-                <PublicityLabel.Icon icon={BsHeart}/>
+                <PublicityLabel.Icon icon={BsHeart} handleClick={addOnFavorite}/>
             </div>
             <Link href={'/pc-gamer/'+1} className="z-0">
                 <div className='mt-[-30px]'>
