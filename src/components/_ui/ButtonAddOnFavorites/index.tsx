@@ -9,7 +9,7 @@ export const IconButtonAddOnFavorites: React.FC<{id: string}> = ({ id }) => {
     return(
         <>
             {changeFavorite ? (
-                <i className="text-2xl text-[var(--star-color)]"  onClick={() => {
+                <i className="text-2xl text-white"  onClick={() => {
                     setChangeFavorite(!productsMethods.removeFromFavorites(id))
                 }}>
                     <BsHeartFill/>
