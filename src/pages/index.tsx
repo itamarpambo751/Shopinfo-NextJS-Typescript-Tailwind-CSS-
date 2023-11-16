@@ -10,8 +10,8 @@ import { PublicityCardV5 } from "@/components/_ui/PublicityCard/v5";
 export default function App() {
   return (
     <div>
-      <Banner.Image url="./assets/img/bcg5.jpg"/>
-      <Banner.ImageSection url="./assets/img/underBanner.webp"/>
+      <Banner.Image url="/assets/img/bcg5.jpg"/>
+      <Banner.ImageSection url="/assets/img/underBanner.webp"/>
 
       <Shopinfo.FindYourPC />
 
@@ -82,7 +82,7 @@ export default function App() {
           </h1>
         </Section.Content>
         <div className="flex gap-7 w-[90%] m-auto mt-10">
-          { [1, 1, 1, 1, 1].map(() => <PublicityCardV5 />) }
+          { [1, 1, 1, 1, 1].map((n, i) => <PublicityCardV5 key={i}/>) }
         </div>
       </Section.Root>
       <div className="mt-36">
