@@ -28,7 +28,7 @@ computer: {
 }}> = ({ computer }) => {
     return(
         <PublicityCard.Root 
-            className='px-7 pt-3 w-[230px] bg-[#dadada19] before-name' 
+            className='px-7 pt-3 w-[230px]  before-name' 
             id={computer.id} resize transparent
             useLinkJustOnCardBody
         >

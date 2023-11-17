@@ -88,19 +88,42 @@ interface RenderProps {
   subtitle: string
   paragraph: string
   section: string
+  render_card: React.FC<{
+      computer: {
+        title: string;
+        price: string;
+        old_price: string;
+        stars: number;
+        favorites: boolean;
+        id: string;
+        image: string;
+        name: string;
+        processor: string;
+        mark: string;
+        videoboard: string;
+        memory: string;
+        HD: string;
+        SSD: string;
+        WIFI: boolean;
+        specifications: {
+            icon: string, setting: string
+        }[];
+      }}>
 }
 
-export default function Render()  {
+export default function Render({ 
+  banner_img, title, subtitle, paragraph, section, render_card: Card
+}: RenderProps)  {
   return (
     <div>
       <Banner.Gradient.Root>
-				<Banner.Image url="/assets/img/choosepc-gmer.webp"/>
+				<Banner.Image url={banner_img}/>
 				<div className='absolute top-0 left-10 m-auto'>
-					<Banner.Gradient.Container section='Home > Computadores Gamer'>
+					<Banner.Gradient.Container section={section}>
 						<Banner.Gradient.Content
-							title='PC Gamer'
-							subtitle='A Nova era de PC Gamer chegou! Teste as suas Habilidades e jogue com um Neologic Gamer.'
-							paraghraph='No mercado dos games há mais de 20 anos, a Shopinfo busca o melhor em termos de hardware e tecnologia para computadores. Com compromisso e'
+							title={title}
+							subtitle={subtitle}
+							paraghraph={paragraph}
 						/>
 					</Banner.Gradient.Container>
 				</div>
@@ -141,7 +164,7 @@ export default function Render()  {
                 <div>
                   <ul className='flex-1 grid grid-cols-4 gap-7'>
                     {pcGamers.all.map(computer => (
-                      <PublicityCardV7 key={computer.id} computer={computer}/>
+                      <Card key={computer.id} computer={computer}/>
                     ))}
                   </ul>
                   <div className='mt-20 flex justify-center items-center'>
