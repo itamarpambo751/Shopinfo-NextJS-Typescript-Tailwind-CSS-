@@ -3,9 +3,7 @@ import React from 'react';
 import { ChevronRightDown } from '@/components/_ui/ChevronRightDown';
 import { BsChevronDown } from 'react-icons/bs';
 import { categories } from '@/pages/api/data';
-import { PublicityCardV6 } from '../PublicityCard/v6';
 import { pcGamers } from '@/pages/api/products/gamers';
-import { PublicityCardV7 } from '../PublicityCard/v7';
 
 const listDown = [
   {
@@ -88,27 +86,7 @@ interface RenderProps {
   subtitle: string
   paragraph: string
   section: string
-  render_card: React.FC<{
-      computer: {
-        title: string;
-        price: string;
-        old_price: string;
-        stars: number;
-        favorites: boolean;
-        id: string;
-        image: string;
-        name: string;
-        processor: string;
-        mark: string;
-        videoboard: string;
-        memory: string;
-        HD: string;
-        SSD: string;
-        WIFI: boolean;
-        specifications: {
-            icon: string, setting: string
-        }[];
-      }}>
+  render_card: React.FC<any>
 }
 
 export default function Render({ 
