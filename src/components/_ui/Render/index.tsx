@@ -81,7 +81,7 @@ const listDown = [
   }
 ]
 
-interface PageComponentProps {
+interface RenderProps {
   banner_img: string
   title: string
   subtitle: string
@@ -89,7 +89,7 @@ interface PageComponentProps {
   section: string
 }
 
-export default function PageComponent()  {
+export default function Render()  {
   return (
     <div>
       <Banner.Gradient.Root>

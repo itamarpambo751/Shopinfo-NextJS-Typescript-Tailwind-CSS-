@@ -1,8 +1,8 @@
-import PageComponent from '@/components/_ui/PageComponent';
+import Render from '@/components/_ui/Render';
 import React from 'react';
 
 // import { Container } from './styles';
 
 export default function page() {
-  return <PageComponent />
+  return <Render />
 }

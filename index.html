@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li>
+            Add Favoritos
+        </li>
+    </ul>
+    <style>
+        body {
+            overflow: hidden;
+        }
+        ul {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        li {
+            cursor: pointer;
+            position: relative;
+            transition: color .3s;
+        }
+        li::before {
+            transition: 5s;
+        }
+        li:hover::before {
+            font-size: 12px;
+            font-family: sans-serif;
+            position: absolute;
+            top: -40px;
+            right: -50px;
+            content: "Favoritos";
+            background-color: rgb(91, 91, 91);
+            color: #eee;
+            padding: 10px 25px;
+        }
+    </style>
+</body>
+</html>

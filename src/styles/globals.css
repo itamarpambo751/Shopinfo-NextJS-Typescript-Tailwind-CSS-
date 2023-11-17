@@ -59,6 +59,23 @@
 		font-size: .9rem;
 		color: var(--border-color);
 	}
+  .add-on-favorites {
+    cursor: pointer;
+    position: relative;
+  }
+  .add-on-favorites:hover::before {
+    font-size: 11px;
+    position: absolute;
+    top: -50px;
+    right: -45px;
+    content: "favoritos";
+    background-color: #555;
+    border-radius: .1rem;
+    color: #eee;
+    padding: 0px 10px;
+    opacity: 1;
+    z-index: 999.9;
+  }
 }
 
 .times-new {

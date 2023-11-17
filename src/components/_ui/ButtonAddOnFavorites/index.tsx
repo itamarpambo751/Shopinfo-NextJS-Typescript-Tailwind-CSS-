@@ -17,7 +17,7 @@ export const IconButtonAddOnFavorites: React.FC<{id: string}> = ({ id }) => {
             ):(
                 <i onClick={() => {
                     setChangeFavorite(productsMethods.addOnFavorites(id))
-                }} className="text-2xl text-white">
+                }} className="text-2xl text-white add-on-favorites">
                     <BsHeart/>
                 </i>
             )}

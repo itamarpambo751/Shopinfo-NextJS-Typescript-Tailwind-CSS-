@@ -55,7 +55,7 @@ computer: {
                         <PublicityCard.Content.Product 
                             name={computer.name} 
                             className='text-sm' 
-                            subtring={55} 
+                            subtring={52} 
                             noBold
                         /> 
                     </div>
