@@ -26,10 +26,13 @@ computer: {
 }}> = ({ computer }) => {
     return(
         <PublicityCard.Root 
-            className='px-7 pt-3 w-[230px] bg-[#dadada0d]' 
+            className='px-7 pt-3 w-[230px] bg-[#dadada0d] before-name' 
             id={computer.id} resize transparent
             useLinkJustOnCardBody
         >
+            <div className="before text-[11px]">
+                <i>{computer.name}</i>
+            </div>
             <div className="flex justify-between items-center z-[999]">
                 <PublicityLabel.Root>
                     <PublicityLabel.Content bigText="-18%"/>

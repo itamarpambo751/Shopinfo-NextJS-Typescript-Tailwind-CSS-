@@ -164,8 +164,24 @@
 	border-radius: 0 0 15px 15px;
 }
 
-
-
+.before-name {
+  position: relative;
+}
+.before-name .before {
+  position: absolute;
+  display: none;
+  left: -250px;
+  top: 30%;
+  min-width: 300px;
+  max-width: 300px;
+  padding: 1px 5px;
+  background: #555;
+  z-index: 888;
+  @apply shadow-xl
+}
+.before-name:hover .before {
+  display: flex;
+}
 .borda-de-texte {
   border: 2px solid red;
 }
