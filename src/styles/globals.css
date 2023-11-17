@@ -179,8 +179,31 @@
   z-index: 888;
   @apply shadow-xl
 }
-.before-name:hover .before {
+/* .before-name:hover .before {
   display: flex;
+} */
+
+
+.videoboard {
+  position: absolute;
+  top: 40%;
+  left: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: .3rem;
+  z-index: 1000;
+  width: 120px;
+}
+
+.videoboard span {
+  background-color: #000;
+  padding: .3rem .5rem;
+  font-size: 13px;
+  line-height: 13px;
+  @apply font-bold
+}
+.videoboard span:nth-child(2) {
+  color: var(--whatsap-color);
 }
 .borda-de-texte {
   border: 2px solid red;

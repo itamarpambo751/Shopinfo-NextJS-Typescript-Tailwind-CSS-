@@ -32,7 +32,7 @@ const links = [
 
 const Header:React.FC = () => {
   return (
-    <header className="w-[100%] bg-black sticky top-[-60px] z-[1000] header-box-shadow">
+    <header className="w-[100%] bg-black sticky top-[-60px] z-[5000] header-box-shadow">
       <div className="w-[100%] h-[60px] flex items-center justify-center bg-[#FE093C]">
         <Image 
           src="/assets/img/header.webp" 
@@ -56,7 +56,7 @@ const Header:React.FC = () => {
             </Link>
             <div className="flex-1 flex justify-center items-center gap-3">
               <div className="flex items-center gap-6 relative">
-                <ul className="flex justify-center items-end pt-1 gap-3 relative">
+                <ul className="flex justify-center items-end pt-1 gap-3 relative items-link-list">
                   {links.map((item, i) => (
                     <HeaderListLinkList link={item} key={i}/>
                   ))}                  

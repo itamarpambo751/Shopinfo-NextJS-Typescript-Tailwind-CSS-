@@ -5,6 +5,7 @@ import { BsChevronDown } from 'react-icons/bs';
 import { categories } from '@/pages/api/data';
 import { PublicityCardV6 } from '../PublicityCard/v6';
 import { pcGamers } from '@/pages/api/products/gamers';
+import { PublicityCardV7 } from '../PublicityCard/v7';
 
 const listDown = [
   {
@@ -139,7 +140,9 @@ export default function Render()  {
                 </div>
                 <div>
                   <ul className='flex-1 grid grid-cols-4 gap-7'>
-                    {pcGamers.all.map(computer => <PublicityCardV6 key={computer.id} computer={computer}/>)}
+                    {pcGamers.all.map(computer => (
+                      <PublicityCardV7 key={computer.id} computer={computer}/>
+                    ))}
                   </ul>
                   <div className='mt-20 flex justify-center items-center'>
                     <button className='bg-[var(--red-text-color)] w-96 font-bold text-[1rem] p-2 rounded-md'>Carregar mais produtos</button>
