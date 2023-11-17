@@ -1,5 +1,5 @@
 import { productsMethods } from '@/pages/api/products/_controller';
-import React, { ElementType, MouseEventHandler, useState } from 'react';
+import React, { useState } from 'react';
 import { BsHeart, BsHeartFill } from 'react-icons/bs';
 
 // import { Container } from './styles';

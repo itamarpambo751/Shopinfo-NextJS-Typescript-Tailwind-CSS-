@@ -4,6 +4,7 @@ import { ChevronRightDown } from '@/components/_ui/ChevronRightDown';
 import { BsChevronDown } from 'react-icons/bs';
 import { categories } from '@/pages/api/data';
 import { PublicityCardV6 } from '../PublicityCard/v6';
+import { pcGamers } from '@/pages/api/products/gamers';
 
 const listDown = [
   {
@@ -138,7 +139,7 @@ export default function PageComponent()  {
                 </div>
                 <div>
                   <ul className='flex-1 grid grid-cols-4 gap-7'>
-                    {[1, 2, 3, 4, 5, 6, 7, 8, 9, 2, 2, 2, 2, 2].map((n, i) => <PublicityCardV6 key={i}/>)}
+                    {pcGamers.all.map(computer => <PublicityCardV6 key={computer.id} computer={computer}/>)}
                   </ul>
                   <div className='mt-20 flex justify-center items-center'>
                     <button className='bg-[var(--red-text-color)] w-96 font-bold text-[1rem] p-2 rounded-md'>Carregar mais produtos</button>

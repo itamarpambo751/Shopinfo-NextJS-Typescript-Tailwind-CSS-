@@ -3,29 +3,49 @@ import PublicityCard from ".."
 import { Hr, PublicityLabel } from "../.."
 import { IconButtonAddOnFavorites } from "../../ButtonAddOnFavorites"
 
-export const PublicityCardV6: React.FC = () => {
+export const PublicityCardV6: React.FC<{
+computer: {
+    title: string;
+    price: string;
+    old_price: string;
+    stars: number;
+    favorites: boolean;
+    id: string;
+    image: string;
+    name: string;
+    processor: string;
+    mark: string;
+    videoboard: string;
+    memory: string;
+    HD: string;
+    SSD: string;
+    WIFI: boolean;
+    specifications: {
+        icon: string, setting: string
+    }[];
+}}> = ({ computer }) => {
     return(
         <PublicityCard.Root 
             className='px-7 pt-3 w-[230px] bg-[#dadada0d]' 
-            id="1" resize transparent
+            id={computer.id} resize transparent
             useLinkJustOnCardBody
         >
             <div className="flex justify-between items-center z-[999]">
                 <PublicityLabel.Root>
                     <PublicityLabel.Content bigText="-18%"/>
                 </PublicityLabel.Root>
-                <IconButtonAddOnFavorites id="1"/>
+                <IconButtonAddOnFavorites id={computer.id}/>
             </div>
-            <Link href={'/pc-gamer/'+1} className="z-0">
+            <Link href={'/pc-gamer/'+computer.id} className="z-0">
                 <div className='mt-[-30px]'>
-                    <PublicityCard.Image url="../assets/img/1(7).png"/>
+                    <PublicityCard.Image url={computer.image}/>
                 </div>
                 <PublicityCard.Content.Root>
                     <div className="scale-95">
                         <br />
                         <PublicityCard.Content.Price 
-                            price="1.239,90" 
-                            oldPrice="2.014,20" 
+                            price={computer.price} 
+                            oldPrice={computer.old_price} 
                             color
                         />
                     </div>
@@ -33,9 +53,9 @@ export const PublicityCardV6: React.FC = () => {
                     <Hr className="w-full border-1 border-[#000]"/>
                     <div className="mt-12 mb-2 scale-95">
                         <PublicityCard.Content.Product 
-                            name="Monitor Gamer Duex 27'' Full HD 1ms, 240, curvo, ip, freesyns" 
+                            name={computer.name} 
                             className='text-sm' 
-                            subtring={73} 
+                            subtring={55} 
                             noBold
                         /> 
                     </div>

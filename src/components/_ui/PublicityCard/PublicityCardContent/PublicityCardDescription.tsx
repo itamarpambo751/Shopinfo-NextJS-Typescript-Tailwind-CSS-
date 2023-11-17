@@ -34,23 +34,24 @@ const PublicityCardDescription: React.FC<PublicityCardDescriptionProps> = ({
                     return (
                         <li key={setting} className="flex justify-start items-center gap-1">
                             <img
-															src={url}
-															data-resize={PublicityCardContextProps.resize}
-															className="w-[15px] data-[resize=true]:w-[13px]"
-														/>
+								src={url}
+								data-resize={PublicityCardContextProps.resize}
+								className="w-[15px] data-[resize=true]:w-[13px]"
+							/>
                             <span
-															data-resize={PublicityCardContextProps.resize}
-															className="text-[.9rem] data-[resize=true]:text-[.77rem]"
-														>
-															{setting}
-														</span>
+								data-resize={PublicityCardContextProps.resize}
+								className="text-[.9rem] data-[resize=true]:text-[.77rem]"
+							>
+								{setting}
+							</span>
                         </li>
                     )
                 })}
             </ul>
         )}
-
-        {!PublicityCardContextProps.resize && <PublicityCardProductPrice price={price} oldPrice={oldPrice}/>}
+        {!PublicityCardContextProps.resize && (
+            <PublicityCardProductPrice price={price} oldPrice={oldPrice}/>
+        )}
     </div>
   )
 }
