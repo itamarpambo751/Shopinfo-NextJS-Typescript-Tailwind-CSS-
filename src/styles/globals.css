@@ -179,9 +179,9 @@
   z-index: 888;
   @apply shadow-xl
 }
-/* .before-name:hover .before {
+.before-name:hover .before {
   display: flex;
-} */
+}
 
 
 .videoboard {

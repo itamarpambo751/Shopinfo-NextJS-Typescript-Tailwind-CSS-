@@ -19,7 +19,7 @@ const PublicityCardImage: React.FC<PublicityCardImageProps> = ({
       <img
 				src={url}
 				data-resize={PublicityCardContextProps.resize}
-				className="data-[resize=false]:scale-[1.3] object-cover"
+				className="data-[resize=false]:scale-[1.7] object-cover data-[resize=false]:ml-[-70px]"
 			/>
     </div>
   )

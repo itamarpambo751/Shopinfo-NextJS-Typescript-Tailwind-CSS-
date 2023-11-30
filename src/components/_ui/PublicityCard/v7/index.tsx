@@ -29,20 +29,20 @@ computer: {
     return(
         <PublicityCard.Root 
             className='px-7 pt-3 w-[230px]  before-name' 
-            id={computer.id} resize transparent
+            id={computer.id} resize
             useLinkJustOnCardBody
         >
-            <div className="before text-[11px]">
-                <i>{computer.name}</i>
-            </div>
-
+            {computer.name.length > 52 && (
+                <div className="before text-[11px]">
+                    <i>{computer.name}</i>
+                </div>
+            )}
             <div className="videoboard">
                 <span>{computer.processor}</span>
                 <span>
                     {computer.videoboard}
                 </span>
             </div>
-
             <div className="flex justify-between items-center z-[999]">
                 <PublicityLabel.Root>
                     <PublicityLabel.Content bigText="-18%"/>

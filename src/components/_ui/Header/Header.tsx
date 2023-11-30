@@ -1,10 +1,13 @@
-import React from 'react'
+'use client'
+
+import React, { useState } from 'react'
 import { Heart, List, MagnifyingGlass, Truck } from 'phosphor-react'
 import { Section } from '..'
 import Link from 'next/link'
 import { HeaderListLinkList } from './HeaderListLinkList'
 import { UserLoggedHeader } from './UserLoggedHeader'
 import Image from 'next/image'
+import { BsFacebook, BsLinkedin } from 'react-icons/bs'
 
 
 const links = [
@@ -31,6 +34,12 @@ const links = [
 ]
 
 const Header:React.FC = () => {
+  const [status, setStatus] = useState(false)
+
+  function handleClick() {
+    alert("Click!")
+  }
+
   return (
     <header className="w-[100%] bg-black sticky top-[-60px] z-[5000] header-box-shadow">
       <div className="w-[100%] h-[60px] flex items-center justify-center bg-[#FE093C]">
@@ -54,8 +63,11 @@ const Header:React.FC = () => {
                 height={170}
               />
             </Link>
+
+
+
             <div className="flex-1 flex justify-center items-center gap-3">
-              <div className="flex items-center gap-6 relative">
+              <div className="flex items-center gap-6 relative border">
                 <ul className="flex justify-center items-end pt-1 gap-3 relative items-link-list">
                   {links.map((item, i) => (
                     <HeaderListLinkList link={item} key={i}/>
@@ -74,7 +86,31 @@ const Header:React.FC = () => {
                     </button>
                 </div>
               </div>
-              <UserLoggedHeader />
+              {status ? (
+                <UserLoggedHeader />
+              ):(
+                <div className='ml-auto flex justify-end items-center gap-3 flex-1 border'>
+                  <button
+                    onClick={handleClick}
+                    className='z-[10000] flex justify-center gap-2 items-center bg-slate-800/50 py-2 pl-2 pr-4 rounded-md'>
+                    <i className='text-[1.5rem]'>
+                      <BsLinkedin />
+                    </i>
+                    Linkedin
+                  </button>
+                  <button
+                    onClick={handleClick}
+                    className='z-[10000] flex justify-center items-center bg-slate-800/50 text-white rounded-md pr-2'>
+                    <Image 
+                      src='/assets/img/google-logo.png'
+                      alt='google-logo'
+                      height={40}
+                      width={40}
+                    />
+                    Entre com Google
+                  </button>
+                </div>
+              )}
             </div>
           </section>
         </div>
