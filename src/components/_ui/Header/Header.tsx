@@ -63,11 +63,8 @@ const Header:React.FC = () => {
                 height={170}
               />
             </Link>
-
-
-
             <div className="flex-1 flex justify-center items-center gap-3">
-              <div className="flex items-center gap-6 relative border">
+              <div className="flex items-center gap-6 relative">
                 <ul className="flex justify-center items-end pt-1 gap-3 relative items-link-list">
                   {links.map((item, i) => (
                     <HeaderListLinkList link={item} key={i}/>
@@ -89,7 +86,7 @@ const Header:React.FC = () => {
               {status ? (
                 <UserLoggedHeader />
               ):(
-                <div className='ml-auto flex justify-end items-center gap-3 flex-1 border'>
+                <div className='ml-auto flex justify-end items-center gap-3 flex-1'>
                   <button
                     onClick={handleClick}
                     className='z-[10000] flex justify-center gap-2 items-center bg-slate-800/50 py-2 pl-2 pr-4 rounded-md'>
