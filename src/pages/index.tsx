@@ -22,7 +22,7 @@ export default function App() {
       </Section.Root>
 
       <Section.Root>
-        <div className="w-[90%] m-auto text-center flex flex-col gap-7">
+        <div className="max-md:w-[95%] w-[90%] m-auto text-center flex flex-col gap-7">
           <h1 className="text-[1.6rem] font-bold">Principais categorias</h1>
           <Categories categories={categories}/>
        </div>

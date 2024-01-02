@@ -9,7 +9,7 @@ const SectionContentCenter: React.FC<SectionContentCenterProps> = ({
     children
 }: SectionContentCenterProps) => {
   return (
-    <div className='w-[81%] m-auto'>
+    <div className='max-md:w-[95%] w-[81%]  m-auto'>
         { children }
     </div>
   );
