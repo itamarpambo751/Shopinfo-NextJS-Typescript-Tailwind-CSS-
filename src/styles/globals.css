@@ -208,3 +208,21 @@
 .borda-de-texte {
   border: 2px solid red;
 }
+
+
+@media (max-width: 1231px) {
+  .items-link-list {
+    display: none;
+  }
+}
+@media (max-width: 680px) {
+  .left-header {
+    display: none;
+  }
+  .btn-menu-hidden {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.7rem;
+  }
+}
