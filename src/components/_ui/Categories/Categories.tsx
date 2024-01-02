@@ -14,7 +14,7 @@ const Categories: React.FC<CategoriesProps> = ({
   categories
 }: CategoriesProps) => {
   return (
-    <ul className="flex justify-center flex-wrap xl:justify-between gap-7 max-[500px]:gap-4">
+    <ul className="flex justify-center flex-wrap xl:justify-between gap-7 max-md:gap-4">
       {
         categories.map((item, i) => {
           return (
