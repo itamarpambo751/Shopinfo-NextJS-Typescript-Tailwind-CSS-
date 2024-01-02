@@ -6,9 +6,9 @@ interface BannerProps {
 
 const MainImage: React.FC<BannerProps> = ({ url }: BannerProps) => {
   return (
-    <section className="w-[100%] h-[458px]">
+    <section className="w-[100%] h-[458px] section-banner-image">
         <Image 
-          src={url} className='w-[100%] h-[100%] object-cover'
+          src={url} className='w-[100%] h-[100%] object-cover banner-image'
           alt='banner'
           width={1920}
           height={1080}

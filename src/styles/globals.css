@@ -215,6 +215,17 @@
     display: none;
   }
 }
+@media (max-width: 1100px) {
+  .section-banner-image {
+    height: 350px;
+  }
+  .banner-image {
+    width: auto;
+    height: 100%;
+    object-fit: cover;
+    image-rendering: optimizeQuality;
+  }
+}
 @media (max-width: 680px) {
   .left-header {
     display: none;
