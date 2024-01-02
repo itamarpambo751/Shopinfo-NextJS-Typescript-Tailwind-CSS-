@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Heart, List, MagnifyingGlass, Truck } from 'phosphor-react'
 import { Section } from '..'
 import Link from 'next/link'
