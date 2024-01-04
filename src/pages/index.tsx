@@ -94,7 +94,7 @@ export default function App() {
               <hr className="border-2 w-20 m-auto mt-3 rounded-xl border-[var(--red-color)]"/>
             </div>
 
-            <ul className="flex justify-between mt-10">
+            <ul className="flex justify-between mt-10 max-[900px]:grid max-[900px]:grid-cols-2 max-[500px]:grid-cols-1">
               <li className="rounded-md py-5 efect-hover flex flex-col items-center">
                 <img src="./assets/img/choose2.png"/>
                 <div className="text-center m-auto p-4 w-[90%] rounded-md">
