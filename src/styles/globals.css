@@ -24,6 +24,7 @@
   body {
     @apply text-white;
     @apply bg-[var(--background-color)];
+    overflow-x: hidden;
   }
   input, textarea {
     @apply text-[14px] transition-shadow duration-150 border-[.1rem] border-[var(--border-color)]
