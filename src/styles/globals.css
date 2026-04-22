@@ -255,3 +255,27 @@
     font-size: 1.7rem;
   }
 }
+
+/* Header Styles */
+.header-list-link {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding-bottom: 0.5rem;
+}
+
+header input::placeholder {
+  color: var(--text-secondary);
+  opacity: 0.8;
+}
+
+header input:focus {
+  border-color: var(--red-color) !important;
+  box-shadow: 0 0 0 2px rgba(230, 57, 70, 0.1) !important;
+}
+
+/* Navigation links smooth transition */
+.items-link-list a {
+  white-space: nowrap;
+  text-decoration: none;
+}
