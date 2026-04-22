@@ -31,9 +31,9 @@ export default function App() {
       <Shopinfo.Oferts />
 
       <Section.Root>
-        <div className="h-[700px] bg-[#202020] pt-12">
+        <div className="h-[700px] bg-gradient-to-br from-white to-gray-50 pt-12">
           <Section.Content>
-            <h1 className="text-4xl font-bold text-center uppercase">Encontre o Pc Gamer Completo Para seus Jogos</h1>
+            <h1 className="text-4xl font-bold text-center uppercase text-[var(--text-primary)]">Encontre o Pc Gamer Completo Para seus Jogos</h1>
 
             <InterTripleNavigation
               labels={['Selecione seus Jogos','Escolha o Preço','Selecione o Desempenho']}

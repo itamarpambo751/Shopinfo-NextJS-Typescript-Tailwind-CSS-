@@ -8,6 +8,7 @@ import { HeaderListLinkList } from './HeaderListLinkList'
 import { UserLoggedHeader } from './UserLoggedHeader'
 import Image from 'next/image'
 import { BsFacebook, BsLinkedin, BsList } from 'react-icons/bs'
+import styles from './Header.module.css'
 
 
 const links = [
@@ -41,8 +42,8 @@ const Header:React.FC = () => {
   }
 
   return (
-    <header className="w-[100%] bg-black sticky top-[-60px] z-[5000] header-box-shadow">
-      <div className="w-[100%] h-[60px] flex items-center justify-center bg-[#FE093C]">
+    <header className="w-[100%] bg-white sticky top-[-60px] z-[5000] shadow-md">
+      <div className="w-[100%] h-[60px] flex items-center justify-center bg-gradient-to-r from-[var(--red-color)] to-[var(--orange-color)]">
         <Image 
           src="/assets/img/header.webp" 
           className='object-cover'
@@ -96,7 +97,7 @@ const Header:React.FC = () => {
                   </button>
                   <button
                     onClick={handleClick}
-                    className='z-[10000] flex justify-center items-center bg-slate-800/50 text-white rounded-md pr-2'>
+                    className='z-[10000] flex justify-center items-center bg-gray-100 text-[var(--text-primary)] rounded-md pr-2 border border-[var(--border-color)]'>
                     <Image 
                       src='/assets/img/google-logo.png'
                       alt='google-logo'

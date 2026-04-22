@@ -27,7 +27,7 @@ const PublicityCardRoot: React.FC<PublicityCardRootProps> = ({
             data-transparent={!transparent}
             data-resize={resize}
             className={`relative
-            data-[transparent=true]:bg-[#1e1e1e81] grid 
+            data-[transparent=true]:bg-white/80 grid 
             data-[resize=false]:grid-cols-2 data-[hover=true]:effect-hover 
             rounded-md data-[resize=true]:grid-row-2 ${className} 
             flex flex-col justify-center items-end pb-card-before`}
@@ -41,7 +41,7 @@ const PublicityCardRoot: React.FC<PublicityCardRootProps> = ({
             data-transparent={!transparent}
             data-resize={resize}
             className={`relative
-            data-[transparent=true]:bg-[#1e1e1e81] grid 
+            data-[transparent=true]:bg-white/80 grid 
             data-[resize=false]:grid-cols-2 data-[hover=true]:effect-hover 
             rounded-md data-[resize=true]:grid-row-2 ${className} 
             flex flex-col justify-center items-end pb-card-before`
