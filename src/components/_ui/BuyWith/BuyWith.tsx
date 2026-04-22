@@ -18,9 +18,9 @@ const BuyWith: React.FC<BuyWithProps> = ({ whatsap, facebook, help }: BuyWithPro
             </i>
         </li>
         <li className='absolute top-[5rem] w-[60px] p-[.6rem] h-[60px] rounded-full flex animate-pulse 
-            justify-center items-center bg-[#FFF] cursor-pointer
+            justify-center items-center bg-[var(--surface)] cursor-pointer
         '>
-            <i className='text-black text-[2.5rem]'>
+            <i className='text-[var(--text-primary)] text-[2.5rem]'>
                 <Question/>
             </i>
         </li>

@@ -44,7 +44,7 @@ const ComputerDescription: React.FC = () => {
 				</IconButton>
 			</div>
 
-			<span className='text-green-400 text-sm'>Economize R$ 306,80</span>
+			<span className='text-[var(--green-color)] text-sm'>Economize R$ 306,80</span>
 			<ul className='mt-5 space-y-2'>
 				<li className='w-[27%] leading-5 flex justify-start items-center gap-3 text-[var(--border-color)]'>
 					<i className='text-2xl'>
@@ -56,7 +56,7 @@ const ComputerDescription: React.FC = () => {
 					<i className='text-2xl'>
 						<BsBag/>
 					</i>
-					<span className='text-sm'>á vista no cartão por <span className='text-green-400'>R$ 2.428,80</span></span>
+					<span className='text-sm'>á vista no cartão por <span className='text-[var(--green-color)]'>R$ 2.428,80</span></span>
 				</li>
 				<li className='w-[30%] leading-5 flex justify-start items-center gap-3 text-[var(--border-color)]'>
 					<i className='text-2xl'>

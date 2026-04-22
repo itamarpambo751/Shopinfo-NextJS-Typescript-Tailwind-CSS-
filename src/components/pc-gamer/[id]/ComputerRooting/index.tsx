@@ -25,7 +25,7 @@ const RootingComputer: React.FC = () => {
 							<span className='text-[.8rem]'>
 								<PublicityCard.Content.Stars value={234}/>
 							</span>
-							| <span className='uppercase text-green-500 text-sm'>Neologic</span> |
+							| <span className='uppercase text-[var(--green-color)] text-sm'>Neologic</span> |
 							<span className='flex justify-start items-center gap-5'>
 								<i className='text-[1.8rem]'><BsShare /></i>
 

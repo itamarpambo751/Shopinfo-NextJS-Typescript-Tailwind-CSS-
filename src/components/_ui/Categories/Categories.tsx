@@ -18,7 +18,7 @@ const Categories: React.FC<CategoriesProps> = ({
       {
         categories.map((item, i) => {
           return (
-            <li key={i} className="category-block effect-hover rounded-[.4rem] bg-white border border-[var(--border-color)] flex justify-center flex-col items-center gap-2 w-[120px] p-2 pb-3 shadow-sm hover:shadow-md transition-shadow">
+            <li key={i} className="category-block effect-hover rounded-[.4rem] bg-[var(--surface)] border border-[var(--border-color)] flex justify-center flex-col items-center gap-2 w-[120px] p-2 pb-3 shadow-sm hover:shadow-md transition-shadow">
               <Image 
                 src={item.url} 
                 alt='item'

@@ -5,21 +5,25 @@
 
 
 :root {
-  --star-color: #ffc107;
-  --orange-color: #f77f00;
-  --red-color: #e63946;
-  --red-text-color: #d62828;
-  --border-color: #d0d0d0;
-	--border-color-2: #e8e8e8;
+  color-scheme: light;
+  --star-color: #f59e0b;
+  --orange-color: #f97316;
+  --red-color: #d4af37;
+  --red-text-color: #b8860b;
+  --border-color: #e5e7eb;
+	--border-color-2: #d1d5db;
   --violet: rgb(126, 97, 254);
   --border-size: 1px;
-  --background-color: #f8f9fa;
-  --whatsap-color: #25d366;
-  --green-color: #27ae60;
-  --text-primary: #1a1a1a;
-  --text-secondary: #555555;
+  --background-color: #ffffff;
+  --surface: #f8fafc;
+  --surface-muted: #f3f4f6;
+  --whatsap-color: #22c55e;
+  --gold-color: #d4af37;
+  --green-color: #10b981;
+  --text-primary: #111827;
+  --text-secondary: #6b7280;
   --card-bg: #ffffff;
-  --light-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  --light-shadow: 0 15px 25px rgba(15, 23, 42, 0.08);
 }
 @layer base {
   html {

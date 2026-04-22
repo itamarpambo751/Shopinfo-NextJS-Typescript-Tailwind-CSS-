@@ -42,7 +42,7 @@ const Header:React.FC = () => {
   }
 
   return (
-    <header className="w-[100%] bg-white sticky top-[-60px] z-[5000] shadow-lg border-b border-[var(--border-color)]">
+    <header className="w-[100%] bg-[var(--surface)] sticky top-[-60px] z-[5000] shadow-lg border-b border-[var(--border-color)]">
       <div className="w-[100%] h-[50px] flex items-center justify-center bg-gradient-to-r from-[var(--red-color)] via-[var(--red-text-color)] to-[var(--orange-color)] overflow-hidden relative">
         <Image 
           src="/assets/img/header.webp" 
@@ -97,7 +97,7 @@ const Header:React.FC = () => {
                   </button>
                   <button
                     onClick={handleClick}
-                    className='z-[10000] flex justify-center items-center gap-2 bg-white text-[var(--text-primary)] rounded-lg px-4 py-2.5 border-2 border-[#c1c1c1] hover:border-[var(--red-color)] hover:shadow-md transition-all duration-200 font-medium text-sm'>
+                    className='z-[10000] flex justify-center items-center gap-2 bg-[var(--surface)] text-[var(--text-primary)] rounded-lg px-4 py-2.5 border-2 border-[var(--border-color)] hover:border-[var(--red-color)] hover:shadow-md transition-all duration-200 font-medium text-sm'>
                     <Image 
                       src='/assets/img/google-logo.png'
                       alt='google-logo'

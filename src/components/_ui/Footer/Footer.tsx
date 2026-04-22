@@ -4,7 +4,7 @@ import React from 'react';
 const Footer: React.FC = () => {
   return (
     <footer>
-        <div className='bg-gradient-to-r from-gray-100 to-gray-50 h-[250px] text-center pt-10 border-t border-[var(--border-color)]'>
+        <div className='bg-gradient-to-r from-[var(--surface-muted)] to-[var(--background-color)] h-[250px] text-center pt-10 border-t border-[var(--border-color)]'>
             <h1 className='text-[2.6rem] font-bold text-[var(--text-primary)]'>Contacte-me por Email</h1>
             <span className='text-[1.3rem] font-thin text-[var(--text-secondary)]'>
                 Site original <Link href="https://shopinfo.com.br" className='underline text-[var(--red-color)] hover:text-[var(--orange-color)]'>Shopinfo</Link>
