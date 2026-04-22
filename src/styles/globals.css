@@ -74,11 +74,11 @@
     font-size: 11px;
     position: absolute;
     top: -50px;
-    right: -45px;var(--red-color);
+    right: -45px;
+    content: "favoritos";
+    background-color: var(--red-color);
     border-radius: .1rem;
-    color: #fffcolor: #555;
-    border-radius: .1rem;
-    color: #eee;
+    color: #fff;
     padding: 0px 10px;
     opacity: 1;
     z-index: 999.9;
