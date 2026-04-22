@@ -36,9 +36,14 @@ const links = [
 
 const Header:React.FC = () => {
   const [status, setStatus] = useState(false)
+  const [searchMenuOpen, setSearchMenuOpen] = useState(false)
 
   function handleClick() {
     alert("Click!")
+  }
+
+  function toggleSearchMenu() {
+    setSearchMenuOpen(!searchMenuOpen)
   }
 
   return (
@@ -70,17 +75,49 @@ const Header:React.FC = () => {
                     <HeaderListLinkList link={item} key={i}/>
                   ))}                  
                 </ul>
-                <div className='flex justify-normal items-center gap-0 bg-[var(--light-bg)] rounded-lg border border-[var(--border-color)] hover:border-[var(--red-color)] transition-colors duration-200'>
+                <div className='flex justify-normal items-center gap-0 bg-[var(--light-bg)] rounded-lg border border-[var(--border-color)] hover:border-[var(--red-color)] transition-colors duration-200 relative'>
                   <input
                     type="text"
                     placeholder="Buscar produtos..."
                     className="max-2xl:hidden w-[200px] bg-transparent px-4 py-2.5 text-[14px] outline-none"
+                    onFocus={() => setSearchMenuOpen(true)}
+                    onBlur={() => setTimeout(() => setSearchMenuOpen(false), 200)}
                   />
-                    <button className='p-2.5 hover:bg-[var(--red-color)] hover:text-white transition-colors duration-200 rounded-r-lg'>
+                    <button 
+                      className='p-2.5 hover:bg-[var(--red-color)] hover:text-white transition-colors duration-200 rounded-r-lg'
+                      onClick={toggleSearchMenu}
+                    >
                       <i className='text-[1.3rem] font-bold'>
                         <MagnifyingGlass />
                       </i>
                     </button>
+                  {searchMenuOpen && (
+                    <div className='absolute top-full left-0 mt-2 w-[400px] bg-white border border-[var(--border-color)] rounded-lg shadow-lg z-[10000]'>
+                      <div className='p-4'>
+                        <h3 className='font-semibold text-[var(--text-primary)] mb-3'>Buscar por categoria</h3>
+                        <div className='grid grid-cols-2 gap-2'>
+                          {links.map((item, i) => (
+                            <Link 
+                              key={i} 
+                              href={item.url} 
+                              className='p-2 hover:bg-[var(--surface)] rounded text-[var(--text-secondary)] transition-colors'
+                              onClick={() => setSearchMenuOpen(false)}
+                            >
+                              {item.link}
+                            </Link>
+                          ))}
+                        </div>
+                        <hr className='my-3 border-[var(--border-color)]' />
+                        <h3 className='font-semibold text-[var(--text-primary)] mb-3'>Produtos populares</h3>
+                        <div className='space-y-2'>
+                          <div className='p-2 hover:bg-[var(--surface)] rounded cursor-pointer text-[var(--text-secondary)]'>PC Gamer Ryzen 5</div>
+                          <div className='p-2 hover:bg-[var(--surface)] rounded cursor-pointer text-[var(--text-secondary)]'>Notebook Dell</div>
+                          <div className='p-2 hover:bg-[var(--surface)] rounded cursor-pointer text-[var(--text-secondary)]'>Monitor 27"</div>
+                          <div className='p-2 hover:bg-[var(--surface)] rounded cursor-pointer text-[var(--text-secondary)]'>Teclado Mecânico</div>
+                        </div>
+                      </div>
+                    </div>
+                  )}
                 </div>
               </div>
               {status ? (

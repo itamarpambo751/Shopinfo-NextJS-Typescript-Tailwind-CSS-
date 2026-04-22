@@ -20,9 +20,12 @@
   --whatsap-color: #22c55e;
   --gold-color: #d4af37;
   --green-color: #10b981;
-  --text-primary: #111827;
-  --text-secondary: #6b7280;
+  --text-primary: #000000;
+  --text-secondary: #333333;
+  --text-light: #666666;
   --card-bg: #ffffff;
+  --button-bg: #f3f4f6;
+  --button-text: #000000;
   --light-shadow: 0 15px 25px rgba(15, 23, 42, 0.08);
 }
 @layer base {

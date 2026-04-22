@@ -111,7 +111,7 @@ export default function Render({
           <Section.Content>
             <Settings />
             <div className='flex justify-start items-center gap-5 mt-10'>
-              <h1 className='text-[24px]'>Principais Categorias</h1>
+              <h1 className='text-[24px] text-[var(--text-primary)] font-semibold'>Principais Categorias</h1>
               <Hr className='w-[65%]'/>
             </div>
             <div className='mt-5'/>
@@ -119,12 +119,12 @@ export default function Render({
             <div className='mt-5 flex flex-col'>
               <div className='flex justify-between items-end'>
                 <h2 className="font-bold text-[17px] text-[var(--text-light)] mb-5">Filtros</h2>
-                <form className='px-5 border w-[230px] h-[60px] flex justify-between items-center'>
+                <form className='px-5 border border-[var(--border-color)] w-[230px] h-[60px] flex justify-between items-center bg-[var(--surface)] rounded-md'>
                   <div className='flex flex-col'>
-                    <span className='uppercase text-[14px]'>Ordenar por:</span>
-                    <small className='text-sm text-[var(--border-color)]'>Selecione</small>
+                    <span className='uppercase text-[14px] text-[var(--text-primary)]'>Ordenar por:</span>
+                    <small className='text-sm text-[var(--text-secondary)]'>Selecione</small>
                   </div>
-                  <i>
+                  <i className='text-[var(--text-secondary)]'>
                     <BsChevronDown />
                   </i>
                 </form>
@@ -140,13 +140,13 @@ export default function Render({
                   </div>
                 </div>
                 <div>
-                  <ul className='flex-1 grid grid-cols-4 gap-7'>
+                  <ul className='flex-1 grid grid-cols-4 gap-7 '>
                     {pcGamers.all.map(computer => (
                       <Card key={computer.id} computer={computer}/>
                     ))}
                   </ul>
                   <div className='mt-20 flex justify-center items-center'>
-                    <button className='bg-[var(--red-text-color)] w-96 font-bold text-[1rem] p-2 rounded-md'>Carregar mais produtos</button>
+                    <button className='bg-[var(--button-bg)] text-[var(--button-text)] hover:bg-[var(--surface-muted)] w-96 font-bold text-[1rem] p-2 rounded-md border border-[var(--border-color)] transition-colors duration-200'>Carregar mais produtos</button>
                   </div>
                 </div>
               </div>
