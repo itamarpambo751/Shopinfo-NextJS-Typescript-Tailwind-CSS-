@@ -9,6 +9,7 @@ import { UserLoggedHeader } from './UserLoggedHeader'
 import Image from 'next/image'
 import { BsFacebook, BsLinkedin, BsList } from 'react-icons/bs'
 import styles from './Header.module.css'
+import { FaFire } from 'react-icons/fa'
 
 
 const links = [
@@ -47,15 +48,20 @@ const Header:React.FC = () => {
   }
 
   return (
-    <header className="w-[100%] bg-[var(--surface)] sticky top-[-60px] z-[5000] shadow-lg border-b border-[var(--border-color)]">
-      <div className="w-[100%] h-[50px] flex items-center justify-center bg-gradient-to-r from-[var(--red-color)] via-[var(--red-text-color)] to-[var(--orange-color)] overflow-hidden relative">
-        <Image 
-          src="/logo-mytools.png" 
-          className='object-cover'
-          height={1000}
-          width={1000}
-          alt='logo'
-        />
+    <header className="w-[100%] bg-[var(--surface)] sticky top-[0px] z-[5000] shadow-lg border-b border-[var(--border-color)]">
+      {/* TOP BAR */}
+      <div className="relative flex h-[55px] items-center justify-center overflow-hidden bg-gradient-to-r from-[var(--red-color)] via-[var(--red-text-color)] to-[var(--orange-color)]">
+
+        {/* efeito glow */}
+        <div className="absolute left-[-100px] top-0 h-full w-[200px] rotate-12 bg-white/10 blur-3xl" />
+
+        <div className="flex items-center gap-3">
+          <FaFire className="text-xl text-white animate-pulse" />
+
+          <span className="text-sm font-semibold tracking-wide text-white">
+            MONTE SEU SETUP GAMER COM ATÉ 12% DE DESCONTO!
+          </span>
+        </div>
       </div>
       <Section.Content>
           <section className='h-[90px] flex justify-between items-center gap-10'>

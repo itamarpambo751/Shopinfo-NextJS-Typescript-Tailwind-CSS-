@@ -96,9 +96,9 @@ export default function Render({
     <div>
       <Banner.Gradient.Root>
 				<Banner.Image url={banner_img}/>
-				<div className='absolute top-0 left-10 m-auto'>
+				<div className='absolute top-0 left-10 m-auto text-white'>
 					<Banner.Gradient.Container section={section}>
-						<Banner.Gradient.Content
+						<Banner.Gradient.Content 
 							title={title}
 							subtitle={subtitle}
 							paraghraph={paragraph}
@@ -119,7 +119,7 @@ export default function Render({
             <div className='mt-5 flex flex-col'>
               <div className='flex justify-between items-end'>
                 <h2 className="font-bold text-[17px] text-[var(--text-light)] mb-5">Filtros</h2>
-                <form className='px-5 border border-[var(--border-color)] w-[230px] h-[60px] flex justify-between items-center bg-[var(--surface)] rounded-md'>
+                <form className='px-5 border border-[var(--border-color)] w-[230px] h-[60px] flex justify-between items-center bg-white rounded-md'>
                   <div className='flex flex-col'>
                     <span className='uppercase text-[14px] text-[var(--text-primary)]'>Ordenar por:</span>
                     <small className='text-sm text-[var(--text-secondary)]'>Selecione</small>
@@ -146,7 +146,7 @@ export default function Render({
                     ))}
                   </ul>
                   <div className='mt-20 flex justify-center items-center'>
-                    <button className='bg-[var(--button-bg)] text-[var(--button-text)] hover:bg-[var(--surface-muted)] w-96 font-bold text-[1rem] p-2 rounded-md border border-[var(--border-color)] transition-colors duration-200'>Carregar mais produtos</button>
+                    <button className='bg-white text-[var(--button-text)] hover:bg-[var(--surface-muted)] w-96 font-bold text-[1rem] p-2 rounded-md border border-[var(--border-color)] transition-colors duration-200'>Carregar mais produtos</button>
                   </div>
                 </div>
               </div>
