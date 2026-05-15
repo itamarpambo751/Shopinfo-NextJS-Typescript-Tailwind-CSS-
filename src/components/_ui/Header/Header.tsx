@@ -50,7 +50,7 @@ const Header:React.FC = () => {
     <header className="w-[100%] bg-[var(--surface)] sticky top-[-60px] z-[5000] shadow-lg border-b border-[var(--border-color)]">
       <div className="w-[100%] h-[50px] flex items-center justify-center bg-gradient-to-r from-[var(--red-color)] via-[var(--red-text-color)] to-[var(--orange-color)] overflow-hidden relative">
         <Image 
-          src="/assets/img/header.webp" 
+          src="/logo-mytools.png" 
           className='object-cover'
           height={1000}
           width={1000}
@@ -61,7 +61,7 @@ const Header:React.FC = () => {
           <section className='h-[90px] flex justify-between items-center gap-10'>
             <Link href='/' className='hover:opacity-80 transition-opacity duration-200'>
               <Image 
-                src="/assets/img/logo1.png" 
+                src="/logo-mytools.png" 
                 alt="logo" 
                 className='pb-1'
                 width={160}
